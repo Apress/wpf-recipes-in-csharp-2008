@@ -1,0 +1,57 @@
+﻿<Window
+  x:Class="Recipe_11_02.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Recipe_11_02"
+  Height="350"
+  Width="350">
+  <Window.Triggers>
+    <EventTrigger RoutedEvent="Window.Loaded">
+      <BeginStoryboard Name="ellipseBeginStoryboard">
+        <Storyboard x:Name="ellipseStoryboard">
+          <ParallelTimeline x:Name="ellipseTimeline" RepeatBehavior="Forever">
+            <DoubleAnimation
+              Storyboard.TargetProperty="Width"
+              Storyboard.TargetName="ellipse"
+              AutoReverse="{Binding Path=AutoReverseAnimation}"
+              Duration="{Binding Path=StoryboardDuration}"
+              To="50"
+              From="200" />
+            <DoubleAnimation
+              Storyboard.TargetProperty="Height"
+              Storyboard.TargetName="ellipse"
+              AutoReverse="{Binding Path=AutoReverseAnimation}"
+              Duration="{Binding Path=StoryboardDuration}"
+              To="50"
+              From="200" />
+          </ParallelTimeline>
+        </Storyboard>
+      </BeginStoryboard>
+    </EventTrigger>
+  </Window.Triggers>
+
+  <DockPanel>
+    <StackPanel Margin="5" DockPanel.Dock="Bottom">
+      <TextBlock
+        Text="Storyboard Duration (s):" Margin="0,5" />
+      <Slider
+        Width="250"
+        Height="30"
+        Minimum="0"
+        Maximum="60"
+        Value="5"
+        ValueChanged="Slider_ValueChanged"
+        Margin="0,5" />
+      <CheckBox
+        Content="AutoReverse"
+        IsChecked="{Binding Path=AutoReverseAnimation, Mode=TwoWay}"
+        Margin="0,5" />
+    </StackPanel>
+
+    <Ellipse
+      x:Name="ellipse"
+      Fill="{Binding Path=EllipseFillBrush}"
+      Stroke="Black"
+      StrokeThickness="1" />
+  </DockPanel>
+</Window>

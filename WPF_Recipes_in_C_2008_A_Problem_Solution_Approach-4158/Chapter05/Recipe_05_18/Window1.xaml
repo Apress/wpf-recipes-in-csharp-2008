@@ -1,0 +1,36 @@
+﻿<Window x:Class="Recipe_05_18.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+    xmlns:local="clr-namespace:Recipe_05_18"
+    Title="WPF Recipes 5_18" Height="244" Width="124">
+    <Window.Resources>
+
+        <!-- Create an instance of the collection class -->
+        <local:Countries x:Key="countries"/>
+
+        <!-- Wrap it in a CollectionViewSource -->
+        <CollectionViewSource 
+            x:Key="cvs" 
+            Source="{Binding 
+                     Source={StaticResource countries}}">
+            
+            <!-- Add a SortDescription to sort by the Name -->
+            <CollectionViewSource.SortDescriptions>
+                <ComponentModel:SortDescription 
+                                PropertyName="Name" />
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+
+    </Window.Resources>
+
+    <Grid>
+        <!-- Bind an ItemsControl to the CollectionViewSource -->
+        <!-- Set its DisplayMemberPath to display the Name property -->
+        <ItemsControl 
+            ItemsSource="{Binding 
+                          Source={StaticResource cvs}}"
+            DisplayMemberPath="Name" />
+    </Grid>
+
+</Window>

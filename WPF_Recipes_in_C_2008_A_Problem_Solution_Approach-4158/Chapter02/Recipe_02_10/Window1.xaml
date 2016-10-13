@@ -1,0 +1,40 @@
+﻿<Window x:Class="Recipe_02_10.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 2_10" Height="200" Width="300">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+        VerticalScrollBarVisibility="Auto" >
+        <StackPanel HorizontalAlignment="Left">
+            <Expander ExpandDirection="Right" IsExpanded="True">
+                <Expander.Header>
+                    <Image Source="Apress.gif" />
+                </Expander.Header>
+                <TextBlock TextWrapping="Wrap" MaxWidth="200">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+                </TextBlock>
+            </Expander>
+            <Expander Header="Buttons">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Button 1" Margin="2" />
+                        <Button Content="Button 2" Margin="2" />
+                        <Button Content="Button 3" Margin="2" />
+                        <Button Content="Button 4" Margin="2" />
+                        <Button Content="Button 5" Margin="2" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left">
+                        <Button Content="Button A" Margin="2" />
+                        <Button Content="Button B" Margin="2" />
+                        <Button Content="Button C" Margin="2" />
+                        <Button Content="Button D" Margin="2" />
+                        <Button Content="Button E" Margin="2" />
+                    </StackPanel>
+                </StackPanel>
+            </Expander>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

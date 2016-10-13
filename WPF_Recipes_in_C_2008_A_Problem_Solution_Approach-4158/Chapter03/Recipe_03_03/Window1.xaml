@@ -1,0 +1,13 @@
+﻿<Window x:Class="Recipe_03_03.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_03" Height="300" Width="400">
+    <StackPanel Orientation="Horizontal">
+        <Image Margin="10" ToolTip="Bottom Image" Width="100" 
+               Source="ApressLogo.gif" />
+        <Image Margin="-30" Opacity=".7" Source="ApressLogo.gif" 
+               ToolTip="Middle Image" Width="150" />
+        <Image Source="ApressLogo.gif" ToolTip="Top Image" 
+               VerticalAlignment="Top" Width="150" />
+    </StackPanel>
+</Window>

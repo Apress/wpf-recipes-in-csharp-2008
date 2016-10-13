@@ -1,0 +1,65 @@
+﻿<Window x:Class="Recipe_03_04.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_04" Height="300" Width="300">
+    <StackPanel>
+        <TextBox AcceptsReturn="True" Height="100" IsReadOnly="True" 
+                 Name="textBox1" TextAlignment="Left" TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Auto">
+            Default starting text.
+        </TextBox>
+        <WrapPanel Margin="10">
+            <Button Margin="5" Name="textButton" Width="75" 
+                    Click="TextButton_Click">Set Text</Button>
+            <Button Margin="5" Name="selectAllButton" Width="75" 
+                    Click="SelectAllButton_Click">Select All</Button>
+            <Button Margin="5" Name="clearButton" Width="75" 
+                    Click="ClearButton_Click">Clear</Button>
+            <Button Margin="5" Name="prependButton" Width="75" 
+                    Click="PrependButton_Click">Prepend</Button>
+            <Button Margin="5" Name="insertButton" Width="75" 
+                    Click="InsertButton_Click">Insert</Button>
+            <Button Margin="5" Name="appendButton" Width="75" 
+                    Click="AppendButton_Click">Append</Button>
+            <Button Margin="5" Name="cutButton" Width="75" 
+                    Click="CutButton_Click">Cut</Button>
+            <Button Margin="5" Name="pasteButton" Width="75" 
+                    Click="PasteButton_Click">Paste</Button>
+            <Button Margin="5" Name="undoButton" Width="75" 
+                    Click="UndoButton_Click">Undo</Button>
+        </WrapPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <RadioButton Checked="EditableChecked" Grid.Column="0" 
+                         HorizontalAlignment="Center" IsChecked="True"
+                         Margin="5" Name="editableRadioButton" >
+                Editable</RadioButton>
+            <RadioButton Checked="EditableChecked" Grid.Column="1" 
+                         HorizontalAlignment="Center" Margin="5"
+                         Name="readonlyRadioButton">
+                Read Only</RadioButton>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <RadioButton Checked="AlignmentChecked" Grid.Column="0" 
+                         HorizontalAlignment="Center" IsChecked="True"
+                         Margin="5" Name="leftAlignRadioButton">
+                Left</RadioButton>
+            <RadioButton Checked="AlignmentChecked" Grid.Column="1" 
+                         HorizontalAlignment="Center" Margin="5"
+                         Name="centerAlignRadioButton">
+                Center</RadioButton>
+            <RadioButton Checked="AlignmentChecked" Grid.Column="2" 
+                         HorizontalAlignment="Center" Margin="5"
+                         Name="rightAlignRadioButton">
+                Right</RadioButton>
+        </Grid>
+    </StackPanel>
+</Window>

@@ -1,0 +1,55 @@
+﻿<Window
+  x:Class="Recipe_11_04.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Recipe_11_04"
+  Height="300"
+  Width="300">
+  <Window.Resources>
+    <Storyboard x:Key="LowOpacity">
+      <DoubleAnimation Storyboard.TargetProperty="Opacity" />
+    </Storyboard>
+
+    <Storyboard x:Key="HighOpacity">
+      <DoubleAnimation
+        Storyboard.TargetProperty="Opacity"
+        To="1"
+        AutoReverse="True"
+        RepeatBehavior="Forever" />
+    </Storyboard>
+  </Window.Resources>
+  
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="0.5*" />
+      <ColumnDefinition Width="0.5*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="35" />
+    </Grid.RowDefinitions>
+
+    <Border
+      Background="Firebrick"
+      Width="100"
+      Height="100"
+      x:Name="Rect1"
+      Opacity="0.4">
+      <Border.Triggers>
+        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+          <BeginStoryboard Storyboard="{DynamicResource HighOpacity}" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+          <BeginStoryboard Storyboard="{DynamicResource LowOpacity}" />
+        </EventTrigger>
+      </Border.Triggers>
+    </Border>
+
+    <Rectangle
+      Fill="Firebrick"
+      Width="100"
+      Height="100"
+      Grid.Column="1" />
+  </Grid>
+</Window>

@@ -1,0 +1,44 @@
+﻿<Window
+  x:Class="Recipe_01_09.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:local="clr-namespace:Recipe_01_09"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Window1"
+  Height="175"
+  Width="320"
+  Loaded="Window1_Loaded">
+  <StackPanel>
+
+    <Border
+      BorderThickness="1"
+      BorderBrush="Black"
+      Margin="10,10,10,5">
+      <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,5">
+          <TextBlock Text="Parent.PropertyThatInherits: " />
+          <TextBlock Text="{Binding Path=[0].PropertyThatInherits}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,5,10,5">
+          <TextBlock Text="Child.PropertyThatInherits: " />
+          <TextBlock Text="{Binding Path=[1].PropertyThatInherits}" />
+        </StackPanel>
+      </StackPanel>
+    </Border>
+
+    <Border
+      BorderThickness="1"
+      BorderBrush="Black"
+      Margin="10,5,10,10">
+      <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,5,10,10">
+          <TextBlock Text="Parent.PropertyThatDoesNotInherit: " />
+          <TextBlock Text="{Binding Path=[0].PropertyThatDoesNotInherit}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10,5,10,10">
+          <TextBlock Text="Child.PropertyThatDoesNotInherit: " />
+          <TextBlock Text="{Binding Path=[1].PropertyThatDoesNotInherit}" />
+        </StackPanel>
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</Window>

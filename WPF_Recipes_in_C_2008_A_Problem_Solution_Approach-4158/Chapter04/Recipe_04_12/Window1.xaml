@@ -1,0 +1,58 @@
+﻿<Window x:Class="Recipe_04_12.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_04_12="clr-namespace:Recipe_04_12;assembly="
+    Title="WPF Recipes 4_12" Height="120" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock 
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+                Only accepts numbers:
+         </TextBlock>
+
+        <Recipe_04_12:NumericTextboxControl 
+            x:Name="numTextBox"
+            Width="80" 
+            Height="20" 
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            />
+
+        <Button Click="Button_Click"    
+                Grid.Row="1"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Width="120"
+                Height="24" >
+            Increment the number
+        </Button>
+
+        <StackPanel
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            Grid.Row="1"
+            Grid.Column="1">
+            <TextBlock>The number is:</TextBlock>
+            <TextBlock
+              Margin="4,0,0,0"
+              Text="{Binding 
+              ElementName=numTextBox, 
+              Path=Number, 
+              UpdateSourceTrigger=PropertyChanged}" 
+                />
+        </StackPanel>
+
+    </Grid>
+</Window>

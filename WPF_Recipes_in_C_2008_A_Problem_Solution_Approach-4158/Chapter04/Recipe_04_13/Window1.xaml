@@ -1,0 +1,52 @@
+﻿<Window x:Class="Recipe_04_13.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_04_13="clr-namespace:Recipe_04_13;assembly="
+    Title="WPF Recipes 4_13" Height="200" Width="400" >
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="Auto" />
+            <Setter Property="Height" Value="24" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Column="0">
+            <Canvas>
+                <Button 
+                    Canvas.Top="80" 
+                    Canvas.Left="80">
+                    In View
+                </Button>
+                <Button 
+                    Canvas.Top="300" 
+                    Canvas.Left="80">
+                    Out of view
+                </Button>
+            </Canvas>
+        </ScrollViewer>
+
+        <ScrollViewer Grid.Column="1">
+            <Recipe_04_13:ScrollableCanvasControl>
+                <Button 
+                    Canvas.Top="80" 
+                    Canvas.Left="80">
+                    In View
+                </Button>
+                <Button 
+                    Canvas.Top="300" 
+                    Canvas.Left="80">
+                    Out of View
+                </Button>
+            </Recipe_04_13:ScrollableCanvasControl>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

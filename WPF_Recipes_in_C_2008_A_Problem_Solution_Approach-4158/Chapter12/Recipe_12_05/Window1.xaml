@@ -1,0 +1,21 @@
+﻿<Window x:Class="Recipe_12_05.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 12_05" Height="150" Width="300">
+    <UniformGrid Columns="2" Rows="2" ButtonBase.Click="UniformGrid_Click" 
+                 MouseDown="UniformGrid_MouseDown">
+        <Button Content="Button" MaxHeight="25" MaxWidth="70" Name="Button"/>
+        <Label Background="LightBlue" Content="Label" Name="Label"
+               HorizontalContentAlignment="Center" 
+               MaxHeight="25" MaxWidth="100"/>
+        <TextBlock Background="Turquoise" Padding="25,7" Text="TextBlock" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Name="TextBlock"/>
+        <Canvas MouseDown="Canvas_MouseDown">
+            <Rectangle Canvas.Top="15" Canvas.Left="20" Fill="Aqua" 
+                Height="25" Width="100" Name="Rectangle"/>
+            <TextBlock Canvas.Top="20" Canvas.Left="45" Text="Rectangle" 
+                   IsHitTestVisible="False"/>            
+        </Canvas>
+    </UniformGrid>
+</Window>

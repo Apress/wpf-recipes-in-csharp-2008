@@ -1,0 +1,35 @@
+﻿<Window x:Class="Recipe_03_18.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_18" Height="200" Width="300">
+    <StackPanel>
+        <Button Height="40" Margin="5" ToolTipService.Placement="Mouse" 
+                ToolTipService.ShowDuration="1000">
+            <Button.ToolTip>
+                <ToolTip>
+                    ToolTip displayed for 1 second...
+                </ToolTip>
+            </Button.ToolTip>
+            Button with ToolTip under Mouse
+        </Button>
+        <Button Height="40" Margin="5" ToolTipService.Placement="Center">
+            <Button.ToolTip>
+                <ToolTip>
+                    ToolTip displayed for 5 seconds...
+                </ToolTip>
+            </Button.ToolTip>
+            Button with Centered ToolTip
+        </Button>
+        <Button Height="40" Margin="5" ToolTipService.HorizontalOffset="5cm" 
+                ToolTipService.Placement="Relative" 
+                ToolTipService.ShowDuration="10000" 
+                ToolTipService.VerticalOffset="50px">
+            <Button.ToolTip>
+                <ToolTip >
+                    ToolTip displayed for 10 seconds...
+                </ToolTip>
+            </Button.ToolTip>
+            Button with offset ToolTip
+        </Button>
+    </StackPanel>
+</Window>

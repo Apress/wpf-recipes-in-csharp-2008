@@ -1,0 +1,26 @@
+﻿<Window x:Class="Recipe_03_23.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_23" Height="300" Width="300">
+    <StackPanel>
+        <ListBox FontSize="16" Height="150" Margin="5" Name="listBox1" 
+                 SelectionMode="Extended">
+            <ListBoxItem>List Item 1</ListBoxItem>
+            <ListBoxItem>List Item 2</ListBoxItem>
+            <ListBoxItem>List Item 3</ListBoxItem>
+        </ListBox>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <Label Content="_New item text:" VerticalAlignment="Center" 
+                   Target="{Binding ElementName=textBox}"  />
+            <TextBox Margin="5" Name="textBox" MinWidth="120" />            
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Click="btnAddListItem_Click" Content="Add Item" 
+                    IsDefault="True" Margin="5" Name="btnAddListItem" />
+            <Button Click="btnDeleteListItem_Click" Content="Delete Items" 
+                    Margin="5" Name="btnDeleteListItem" />
+            <Button Click="btnSelectAll_Click" Content="Select All" 
+                    Margin="5" Name="btnSelectAll" />
+        </StackPanel>
+    </StackPanel>
+</Window>

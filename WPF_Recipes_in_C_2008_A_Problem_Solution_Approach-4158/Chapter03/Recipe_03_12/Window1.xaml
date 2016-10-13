@@ -1,0 +1,19 @@
+﻿<Window x:Class="Recipe_03_12.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_12" Height="200" Width="250">
+    <StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Label Target="{Binding ElementName=textBox1}">Label _1</Label>
+            <TextBox Name="textBox1" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Label Target="{Binding ElementName=textBox2}">Label _2</Label>
+            <TextBox Name="textBox2" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Label Target="{Binding ElementName=textBox3}">Label _3</Label>
+            <TextBox Name="textBox3" Width="150"></TextBox>
+        </StackPanel>
+    </StackPanel>
+</Window>

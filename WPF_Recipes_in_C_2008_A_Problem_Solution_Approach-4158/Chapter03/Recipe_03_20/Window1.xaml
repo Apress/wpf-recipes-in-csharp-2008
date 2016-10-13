@@ -1,0 +1,27 @@
+﻿<Window x:Class="Recipe_03_20.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_20" Height="250" Width="300">
+    <StackPanel Name="panel">
+        <CheckBox Checked="CheckBox_Checked" Content="First CheckBox" 
+                  IsChecked="True" Margin="2" Name="checkbox1" 
+                  Unchecked="CheckBox_Unchecked"/>
+        <CheckBox Checked="CheckBox_Checked" Content="Second CheckBox" 
+                  IsChecked="False" Margin="2" Name="checkbox2" 
+                  Unchecked="CheckBox_Unchecked"/>
+        <CheckBox Checked="CheckBox_Checked" 
+                  Content="Third CheckBox (Tri-State Enabled)" 
+                  Indeterminate="CheckBox_Indeterminate"  IsChecked="True" 
+                  IsThreeState="True" Margin="2" Name="checkbox3" 
+                  Unchecked="CheckBox_Unchecked"/>
+        <CheckBox Checked="CheckBox_Checked" 
+                  Content="Fourth CheckBox (Tri-State Enabled)" 
+                  Indeterminate="CheckBox_Indeterminate" IsChecked="False" 
+                  IsThreeState="True" Margin="2" Name="checkbox4" 
+                  Unchecked="CheckBox_Unchecked"/>
+        <Button Content="Get Selected" Margin="5" MaxWidth="100" 
+                Click="Button_Click" />
+        <TextBlock FontWeight="Bold" Text="Selected CheckBoxes:" />
+        <ListBox Margin="5" MinHeight="2cm" Name="listbox" />
+    </StackPanel>
+</Window>

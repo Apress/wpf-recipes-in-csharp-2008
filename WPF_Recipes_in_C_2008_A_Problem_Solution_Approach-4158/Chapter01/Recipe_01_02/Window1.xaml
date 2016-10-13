@@ -1,0 +1,30 @@
+﻿<Window
+  x:Class="Recipe_01_02.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Window1"
+  Height="135"
+  Width="300">
+  <StackPanel>
+    <Button
+      x:Name="btnThrowHandledException"
+      Click="btnThrowHandledException_Click"
+      Content="Throw Handled Exception"
+      Margin="10,10,10,5"
+    />
+
+    <Button
+      x:Name="btnThrowUnhandledException"
+      Click="btnThrowUnhandledException_Click"
+      Content="Throw Unhandled Exception"
+      Margin="10,5,10,5"
+    />
+
+    <Button
+      x:Name="btnThrowUnhandledExceptionFromThread"
+      Click="btnThrowUnhandledExceptionFromThread_Click"
+      Content="Throw Unhandled Exception From a New Thread"
+      Margin="10,5,10,10"
+    />
+  </StackPanel>
+</Window>

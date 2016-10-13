@@ -1,0 +1,36 @@
+﻿<Window 
+  x:Class="Recipe_07_07.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Window1" Height="400" Width="600">
+  <Grid>
+
+    <DocumentViewer x:Name="dvDocumentViewer">
+      <DocumentViewer.CommandBindings>
+        <CommandBinding 
+          Command="ApplicationCommands.Print" 
+          Executed="DocumentViewer_PrintDocument" />
+      </DocumentViewer.CommandBindings>
+    </DocumentViewer>
+
+    <Grid 
+      x:Name="spProgressMask" 
+      Background="#66000000"
+      Visibility="Collapsed">
+      <StackPanel 
+        VerticalAlignment="Center" 
+        HorizontalAlignment="Center">
+        <TextBlock Text="Printing document..." />
+        <ProgressBar 
+          x:Name="pbPrintProgress" 
+          Minimum="0" 
+          Maximum="100" 
+          Value="0" 
+          Width="100" 
+          Height="20" 
+        />
+        <Button Content="Cancel" Click="btnCancelPrint_Click" />
+      </StackPanel>
+    </Grid>
+  </Grid>
+</Window>

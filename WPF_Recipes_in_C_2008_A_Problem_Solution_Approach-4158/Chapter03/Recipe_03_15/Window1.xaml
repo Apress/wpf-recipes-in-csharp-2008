@@ -1,0 +1,29 @@
+﻿<Window x:Class="Recipe_03_15.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_15" Height="100" Width="300">
+    <Grid>
+        <TextBox FontSize="16"  Height="23" Name="txtTextBox" >
+            <TextBox.ContextMenu>
+                <ContextMenu HasDropShadow="True" Opacity=".8">
+                    <MenuItem Command="Cut" Header="Cu_t" />
+                    <MenuItem Command="Copy" Header="_Copy" />
+                    <MenuItem Command="Paste" Header="_Paste" />
+                    <Separator/>
+                    <MenuItem Click="SelectAll_Click" Header="_Select All" />
+                    <MenuItem Click="Clear_Click" Header="_Clear" />
+                    <Separator/>
+                    <MenuItem Header="Format">
+                        <MenuItem Click="TextStyle_Click" Header="_Normal" 
+                              Name="miNormal"></MenuItem>
+                        <MenuItem Click="TextStyle_Click" FontWeight="Bold" 
+                              Header="_Bold" Name="miBold"></MenuItem>
+                        <MenuItem Click="TextStyle_Click" FontStyle="Italic" 
+                              Header="_Italic" Name="miItalic"></MenuItem>
+                    </MenuItem>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+            A TextBox control with ContextMenu.
+        </TextBox>
+    </Grid>
+</Window>

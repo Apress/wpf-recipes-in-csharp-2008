@@ -1,0 +1,13 @@
+﻿<Window x:Class="Recipe_03_09.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_09" Height="200" Width="200">
+    <StackPanel>
+        <Button Click="SharedButtonClickHandler" Height="23" Margin="10" 
+                Name="button1" Width="75">Button One</Button>
+        <Button Click="SharedButtonClickHandler" Height="23" Margin="10" 
+                Name="button2" Width="75">Button Two</Button>
+        <Button Click="SharedButtonClickHandler" Height="23" Margin="10" 
+                Name="button3" Width="75">Button Three</Button>
+    </StackPanel>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="Recipe_06_04.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 6_04" Height="220" Width="300">
+    <Window.Resources>
+
+        <!-- Base Style -->
+        <Style x:Key="BaseControlStyle" 
+               TargetType="{x:Type Control}">
+            <Setter Property="FontFamily" Value="Tahoma" />
+            <Setter Property="FontSize" Value="14pt"/>
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="Margin" Value="4" />
+        </Style>
+
+        <!-- Button Style -->
+        <Style TargetType="{x:Type Button}" 
+               BasedOn="{StaticResource BaseControlStyle}">
+            <!-- Add any overriding property values here -->
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <!-- CheckBox Style -->
+        <Style TargetType="{x:Type CheckBox}" 
+               BasedOn="{StaticResource BaseControlStyle}">
+        </Style>
+
+        <!-- TextBox Style -->
+        <Style TargetType="{x:Type TextBox}" 
+               BasedOn="{StaticResource BaseControlStyle}">
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <StackPanel>
+            <CheckBox>CheckBox with inherited style</CheckBox>
+            <TextBox>TextBox with inherited style</TextBox>
+            <Button>Button with inherited style</Button>
+            <Button FontWeight="Light">Button with overridden style</Button>
+            <TextBlock>TextBlock with default style</TextBlock>
+            <ComboBox>ComboBox with default style</ComboBox>
+        </StackPanel>
+    </Grid>
+</Window>

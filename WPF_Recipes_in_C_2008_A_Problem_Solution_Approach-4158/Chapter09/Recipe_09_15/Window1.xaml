@@ -1,0 +1,59 @@
+﻿<Window x:Class="Recipe_09_15.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 9_15" Height="250" Width="550">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Margin="5" MinWidth="180">
+            <TextBlock FontSize="15" Text="Active Controls:"/>
+            <StackPanel Name="spInnerLeftPanel" Margin="5">
+                <ListBox>
+                    <ListBoxItem Content="First List Item" IsSelected="True"/>
+                    <ListBoxItem Content="Second List Item" />
+                    <ListBoxItem Content="Third List Item" />
+                </ListBox>
+                <Button Content="Button 1" Margin="5" MinWidth="80"/>
+                <Button Content="Button 2" Margin="5" MinWidth="80"/>
+                <GroupBox BorderBrush="Black" BorderThickness="2" 
+                          Header="Check Boxes" Name="gbCheckBoxes">
+                    <StackPanel>
+                        <CheckBox Content="First CheckBox" Margin="2" 
+                                  IsChecked="True" />
+                        <CheckBox Content="Second CheckBox" Margin="2" />
+                        <CheckBox Content="Third CheckBox" Margin="2" />
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
+        <Canvas Margin="5">
+            <Canvas.Resources>
+                <VisualBrush x:Key="VB1" 
+                             Visual="{Binding ElementName=spInnerLeftPanel}" />
+                <VisualBrush x:Key="VB2" Viewbox="0,0,0.5,0.2" 
+                             Visual="{Binding ElementName=spInnerLeftPanel}" 
+                             Stretch="UniformToFill" TileMode="FlipX" />
+            </Canvas.Resources>
+
+            <!--Fill Rectangles with static VisualBrush resources-->
+            <Rectangle Canvas.Top="5" Canvas.Left="5"
+                       Stroke="Black" StrokeThickness="2"                       
+                       Height="180" Width="80" 
+                       Fill="{StaticResource VB1}" 
+                       SnapsToDevicePixels="True" />
+            <Rectangle Canvas.Top="10" Canvas.Left="100"
+                       Stroke="Black" StrokeThickness="2"
+                       Height="70" Width="220" 
+                       Fill="{StaticResource VB2}" 
+                       SnapsToDevicePixels="True" />
+            <!--Fill Ellipse with custom VisualBrush-->
+            <Ellipse Canvas.Top="90" Canvas.Left="100" 
+                     Stroke="Black" StrokeThickness="2"
+                     Height="110" Width="220"
+                     SnapsToDevicePixels="True">
+                <Ellipse.Fill>
+                    <VisualBrush                   
+                        Visual="{Binding ElementName=spInnerLeftPanel}" />
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+    </StackPanel>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="Recipe_09_10.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 9_10" Height="300" Width="300">
+    <UniformGrid>
+        <UniformGrid.Resources>
+            <Style TargetType="{x:Type Rectangle}">
+                <Setter Property="Height" Value="50" />
+                <Setter Property="Width" Value="50" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+        </UniformGrid.Resources>
+        <Rectangle Fill="{x:Static SystemColors.ActiveBorderBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.ActiveCaptionBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.ScrollBarBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.AppWorkspaceBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.ControlBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.ControlDarkBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.ControlDarkDarkBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.ControlLightBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.HotTrackBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.ControlTextBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.DesktopBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.InfoBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.MenuBarBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.GrayTextBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.HighlightBrush}" />
+        <Rectangle Fill="{x:Static SystemColors.WindowFrameBrush}" />
+    </UniformGrid>
+</Window>

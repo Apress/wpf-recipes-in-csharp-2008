@@ -1,0 +1,103 @@
+﻿<Window
+  x:Class="Recipe_11_08.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Recipe_11_08"
+  Height="300"
+  Width="300">
+  <Grid>
+    <Path Stroke="Black" StrokeThickness="1">
+      <Path.Data>
+        <GeometryGroup>
+          <LineGeometry
+            x:Name="line1"
+            StartPoint="20,20"
+            EndPoint="264,20" />
+          <LineGeometry
+            x:Name="line2"
+            StartPoint="38,40"
+            EndPoint="248,40" />
+          <LineGeometry
+            x:Name="line3"
+            StartPoint="140,60"
+            EndPoint="140,150" />
+          <LineGeometry
+            x:Name="line4"
+            StartPoint="160,60"
+            EndPoint="160,150" />
+          <EllipseGeometry
+            x:Name="ellipse"
+            Center="150,150"
+            RadiusX="5"
+            RadiusY="5" />
+          <PathGeometry>
+            <PathFigure>
+              <BezierSegment 
+                x:Name="bezierSegment1"
+                IsStroked="True"
+                Point1="200,200"
+                Point2="105,205"
+                Point3="280,0" />
+            </PathFigure>
+          </PathGeometry>
+          <PathGeometry>
+            <PathFigure StartPoint="0,265">
+              <BezierSegment
+                x:Name="bezierSegment2"
+                IsStroked="True"
+                Point1="100,100"
+                Point2="206,117"
+                Point3="280,267" />
+            </PathFigure>
+          </PathGeometry>
+        </GeometryGroup>
+      </Path.Data>
+      <Path.Triggers>
+        <EventTrigger RoutedEvent="Path.Loaded">
+          <BeginStoryboard>
+            <Storyboard
+              AutoReverse="True"
+              RepeatBehavior="Forever">
+              <PointAnimation
+                To="40,20"
+                Storyboard.TargetName="line1"
+                Storyboard.TargetProperty="EndPoint" />
+              <PointAnimation
+                To="280,40"
+                Storyboard.TargetName="line2"
+                Storyboard.TargetProperty="StartPoint" />
+              <PointAnimation
+                To="20,60"
+                Storyboard.TargetName="line3"
+                Storyboard.TargetProperty="EndPoint" />
+              <PointAnimation
+                To="280,60"
+                Storyboard.TargetName="line4"
+                Storyboard.TargetProperty="EndPoint" />
+              <ParallelTimeline
+                Storyboard.TargetName="ellipse">
+                <DoubleAnimation
+                  To="80"
+                  Storyboard.TargetProperty="RadiusX" />
+                <DoubleAnimation
+                  To="80"
+                  Storyboard.TargetProperty="RadiusY" />
+              </ParallelTimeline>
+              <ParallelTimeline Storyboard.TargetName="bezierSegment1">
+                <PointAnimation Storyboard.TargetProperty="Point1" To="300,0" />
+                <PointAnimation Storyboard.TargetProperty="Point2" To="0,270" />
+                <PointAnimation Storyboard.TargetProperty="Point3" To="300,263" />
+              </ParallelTimeline>
+              <ParallelTimeline Storyboard.TargetName="bezierSegment2">
+                <PointAnimation Storyboard.TargetProperty="Point1" To="0,0" />
+                <PointAnimation Storyboard.TargetProperty="Point2" To="260,300" />
+                <PointAnimation Storyboard.TargetProperty="Point3" To="280,0" />
+              </ParallelTimeline>
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </Path.Triggers>
+    </Path>
+  </Grid>
+</Window>
+

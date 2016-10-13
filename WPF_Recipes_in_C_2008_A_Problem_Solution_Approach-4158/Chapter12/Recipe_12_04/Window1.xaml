@@ -1,0 +1,23 @@
+﻿<Window x:Class="Recipe_12_04.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 12_04" Height="150" Width="300">
+    <UniformGrid Columns="2" Rows="2">
+        <Button Content="Click" Click="Button_Click"
+                MaxHeight="25" MaxWidth="100" />
+        <Label Background="LightBlue" Content="Double Click" 
+               HorizontalContentAlignment="Center" 
+               MaxHeight="25" MaxWidth="100" 
+               MouseDoubleClick="Label_MouseDoubleClick" />
+        <TextBlock Background="Turquoise" Padding="25,7"
+                   Text="Mouse Up" MouseUp="TextBlock_MouseUp"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Canvas>
+            <Rectangle Canvas.Top="15" Canvas.Left="20"
+                Height="25" Width="100" Fill="Aqua" 
+                MouseDown="Rectangle_MouseDown" />
+            <TextBlock Canvas.Top="20" Canvas.Left="40" Text="Mouse Down" 
+                   IsHitTestVisible="False"/>            
+        </Canvas>
+    </UniformGrid>
+</Window>

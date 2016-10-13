@@ -1,0 +1,55 @@
+﻿<Window 
+  x:Class="Recipe_10_07.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Recipe_10_07" Height="300" Width="300">
+  <Viewport3D>
+    <Viewport3D.Camera>
+      <PerspectiveCamera LookDirection="0,0,-1" Position="0,0,5" />
+    </Viewport3D.Camera>
+    <ModelVisual3D>
+      <ModelVisual3D.Content>
+        <AmbientLight Color="White" />
+      </ModelVisual3D.Content>
+    </ModelVisual3D>
+    <!-- Polygon 1 -->
+    <ModelUIElement3D MouseDown="polygon1_MouseDown">
+      <GeometryModel3D>
+        <GeometryModel3D.Geometry>
+          <MeshGeometry3D 
+            Positions="-1,-1,1 1,-1,1 1,1,1" 
+            TriangleIndices="0 1 2" />
+        </GeometryModel3D.Geometry>
+        <GeometryModel3D.Material>
+          <DiffuseMaterial Brush="Firebrick" />
+        </GeometryModel3D.Material>
+      </GeometryModel3D>
+    </ModelUIElement3D>
+    <!-- Polygon 2 -->
+    <ModelUIElement3D MouseDown="polygon2_MouseDown">
+      <GeometryModel3D>
+        <GeometryModel3D.Geometry>
+          <MeshGeometry3D
+            Positions="1,-1,0 1,1,0 -1,1,0" 
+            TriangleIndices="0 1 2" />
+        </GeometryModel3D.Geometry>
+        <GeometryModel3D.Material>
+          <DiffuseMaterial Brush="CornflowerBlue" />
+        </GeometryModel3D.Material>
+      </GeometryModel3D>
+    </ModelUIElement3D>
+    <!-- Polygon 3 -->
+    <ModelUIElement3D MouseDown="polygon3_MouseDown">
+      <GeometryModel3D>
+        <GeometryModel3D.Geometry>
+          <MeshGeometry3D
+            Positions="1,0,0 1,1,0 0,1,0" 
+            TriangleIndices="0 1 2" />
+        </GeometryModel3D.Geometry>
+        <GeometryModel3D.Material>
+          <DiffuseMaterial Brush="OrangeRed"/>
+        </GeometryModel3D.Material>
+      </GeometryModel3D>
+    </ModelUIElement3D>
+  </Viewport3D>
+</Window>

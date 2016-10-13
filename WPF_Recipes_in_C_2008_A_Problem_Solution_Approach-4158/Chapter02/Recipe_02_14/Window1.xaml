@@ -1,0 +1,31 @@
+﻿<Window x:Class="Recipe_02_14.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 2_14" Height="300" Width="300">
+    <UniformGrid>
+        <UniformGrid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+        </UniformGrid.Resources>
+        <Border CornerRadius="90" Background="LightBlue" BorderThickness="2px"
+                Margin="10">
+            <TextBlock Text="A circular border" />
+        </Border>
+        <Border CornerRadius="15" BorderBrush="Black" 
+                BorderThickness="2px, 5px, 2px, 5px" Margin="10">
+            <TextBlock Text="A rounded border" />
+        </Border>
+        <Border CornerRadius="0, 5, 30, 90" Background="LightGray" 
+                BorderBrush="LightGray" BorderThickness="2px, 5px, 2px, 5px" 
+                Margin="10">
+            <TextBlock Text="A wonky border" />
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="4px, 4px, 0px, 0px" 
+                Margin="10">
+            <TextBlock Text="A half border" />
+        </Border>
+    </UniformGrid>
+</Window>

@@ -1,0 +1,50 @@
+﻿<Window x:Class="Recipe_06_09.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Loaded="Window_Loaded"
+    Title="WPF Recipes 6_09" 
+    Height="230" Width="140">
+    <Window.Resources>
+        <Style x:Key="lblDaytimeStyle">
+            <Setter Property="Label.Background" Value="LightYellow" />
+            <Setter Property="Label.BorderBrush" Value="Orange" />
+            <Setter Property="Label.BorderThickness" Value="1" />
+            <Setter Property="Label.FontSize" Value="20" />
+            <Setter Property="Label.Width" Value="96" />
+            <Setter Property="Label.Height" Value="36" />
+            <Setter Property="Label.Margin" Value="4" />
+            <Setter Property="Label.Foreground" Value="Orange" />
+            <Setter Property="Label.HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="imgDaytimeStyle">
+            <Setter Property="Image.Source" Value="authorDay.png" />
+            <Setter Property="Image.Height" Value="140" />
+            <Setter Property="Image.Width" Value="96" />
+        </Style>
+        <Style x:Key="lblNighttimeStyle">
+            <Setter Property="Label.Background" Value="AliceBlue" />
+            <Setter Property="Label.BorderBrush" Value="DarkBlue" />
+            <Setter Property="Label.BorderThickness" Value="1" />
+            <Setter Property="Label.FontSize" Value="20" />
+            <Setter Property="Label.Width" Value="96" />
+            <Setter Property="Label.Height" Value="36" />
+            <Setter Property="Label.Margin" Value="4" />
+            <Setter Property="Label.Foreground" Value="DarkBlue" />
+            <Setter Property="Label.HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="imgNighttimeStyle">
+            <Setter Property="Image.Source" Value="authorNight.png" />
+            <Setter Property="Image.Height" Value="140" />
+            <Setter Property="Image.Width" Value="96" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="148"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image x:Name="img"/>
+        <Label Grid.Row="1" x:Name="lbl" Content="Hello" />
+    </Grid>
+</Window>

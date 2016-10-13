@@ -1,0 +1,17 @@
+﻿<Window x:Class="Recipe_12_08.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 12_08" Height="300" Width="300">
+    <DockPanel LastChildFill="True">
+        <TextBox DockPanel.Dock="Top" FontSize="14" 
+                 Height="30" HorizontalAlignment="Stretch" 
+                 PreviewKeyDown="TextBox_KeyEvent" 
+                 KeyDown="TextBox_KeyEvent" 
+                 PreviewKeyUp="TextBox_KeyEvent" 
+                 KeyUp="TextBox_KeyEvent" 
+                 TextInput="TextBox_TextEvent" 
+                 PreviewTextInput="TextBox_TextEvent"/>
+        <TextBox Name="txtLog" HorizontalAlignment="Stretch" 
+                 IsReadOnly="True" VerticalScrollBarVisibility="Visible"/>
+    </DockPanel>
+</Window>

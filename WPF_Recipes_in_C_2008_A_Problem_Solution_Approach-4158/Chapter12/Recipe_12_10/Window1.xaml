@@ -1,0 +1,14 @@
+﻿<Window x:Class="Recipe_12_10.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 12_10" Height="100" Width="200">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" 
+                    PreviewMouseDown="StackPanel_PreviewMouseDown">
+            <Button Content="Blocked" Click="Button_Click" 
+                    Height="25" Margin="10" Width="70"/>
+        </StackPanel>
+        <Button Content="Not Blocked" Click="Button_Click" 
+                Height="25" Margin="10" Width="70"/>
+    </StackPanel>
+</Window>

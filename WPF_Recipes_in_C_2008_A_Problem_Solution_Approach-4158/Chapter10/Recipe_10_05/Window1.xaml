@@ -1,0 +1,88 @@
+﻿<Window x:Class="Recipe_10_05.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Recipe_10_05" Height="300" Width="800" Loaded="Window1_Loaded">
+  <Window.Resources>
+    <MeshGeometry3D
+      x:Key="triangleMesh"
+      Positions="-1,-1,0 1,-1,-2 1,1,0" 
+      TriangleIndices="0 1 2" />
+    
+    <DiffuseMaterial x:Key="diffuseMaterial" Brush="Firebrick" />    
+    
+    <MaterialGroup x:Key="specularMaterial">
+      <StaticResource ResourceKey="diffuseMaterial" />
+      <SpecularMaterial 
+        Brush="White" 
+        SpecularPower="5" />  
+    </MaterialGroup>
+
+    <MaterialGroup x:Key="emissiveMaterial">
+      <StaticResource ResourceKey="diffuseMaterial" />
+      <EmissiveMaterial Color="Yellow" />
+    </MaterialGroup>
+
+  </Window.Resources>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition Height="20" />
+    </Grid.RowDefinitions>
+    
+    <!-- Diffuse Material -->
+    <Viewport3D x:Name="vp1">
+      <Viewport3D.Camera>
+        <PerspectiveCamera LookDirection="0,0,-1" Position="0,0,5" />
+      </Viewport3D.Camera>
+      <ModelVisual3D>
+        <ModelVisual3D.Content>
+          <PointLight Position="0,-1,2" Color="White" />
+        </ModelVisual3D.Content>
+      </ModelVisual3D>
+    </Viewport3D>
+    <!-- Specular Material -->
+    <Viewport3D x:Name="vp2" Grid.Column="1">
+      <Viewport3D.Camera>
+        <PerspectiveCamera LookDirection="0,0,-1" Position="0,0,5" />
+      </Viewport3D.Camera>
+      <ModelVisual3D>
+        <ModelVisual3D.Content>
+          <PointLight Position="0,-1,2" Color="White" />
+        </ModelVisual3D.Content>
+      </ModelVisual3D>
+    </Viewport3D>
+    <!-- Emissive Material -->
+    <Viewport3D x:Name="vp3" Grid.Column="2">
+      <Viewport3D.Camera>
+        <PerspectiveCamera LookDirection="0,0,-1" Position="0,0,5" />
+      </Viewport3D.Camera>
+      <ModelVisual3D>
+        <ModelVisual3D.Content>
+          <PointLight Position="0,-1,2" Color="White" />
+        </ModelVisual3D.Content>
+      </ModelVisual3D>
+    </Viewport3D>
+    
+    <!-- Labels -->    
+    <TextBlock 
+      Text="Diffuse Material" 
+      Grid.Row="1" 
+      HorizontalAlignment="Center" />
+    <TextBlock 
+      Text="Specular Material" 
+      Grid.Row="1" 
+      Grid.Column="1" 
+      HorizontalAlignment="Center" />
+    <TextBlock 
+      Text="Emissive Material" 
+      Grid.Row="1" 
+      Grid.Column="2" 
+      HorizontalAlignment="Center" />    
+  </Grid>
+</Window>

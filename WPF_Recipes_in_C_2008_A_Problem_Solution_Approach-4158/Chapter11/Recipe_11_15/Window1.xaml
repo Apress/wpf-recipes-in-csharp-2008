@@ -1,0 +1,52 @@
+﻿<Window
+  x:Class="Recipe_11_15.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Recipe_11_15"
+  Height="300"
+  Width="300"
+  Background="Black">
+  <Window.Triggers>
+    <EventTrigger
+      RoutedEvent="Window.Loaded">
+      <BeginStoryboard>
+        <Storyboard
+          Completed="Storyboard_Completed">
+          <ParallelTimeline
+            Completed="ParallelTimeline_Completed">
+            <ColorAnimation
+              Duration="0:0:1"
+              Completed="Animation1_Completed"
+              Storyboard.TargetProperty="Background.Color"
+              To="White" />
+            <ColorAnimation
+              Duration="0:0:2"
+              Completed="Animation2_Completed"
+              Storyboard.TargetName="bd"
+              Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+              To="Black" />
+          </ParallelTimeline>
+          <ColorAnimation
+            Duration="0:0:3"
+            Completed="Animation3_Completed"
+            Storyboard.TargetName="rect"
+            Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+            To="Firebrick" />
+        </Storyboard>
+      </BeginStoryboard>
+    </EventTrigger>
+  </Window.Triggers>
+
+  <Border
+    x:Name="bd"
+    Margin="20"
+    Background="HotPink">
+    <Rectangle
+      x:Name="rect"
+      Width="100"
+      Height="100"
+      Fill="WhiteSmoke" />
+  </Border>
+
+</Window>
+

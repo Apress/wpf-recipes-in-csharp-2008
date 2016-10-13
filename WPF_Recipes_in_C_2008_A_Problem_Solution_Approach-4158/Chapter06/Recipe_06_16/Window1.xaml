@@ -1,0 +1,39 @@
+﻿<Window x:Class="Recipe_06_16.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 6_16" Height="120" Width="300">
+
+    <Window.Resources>
+        <Style
+            TargetType="{x:Type ProgressBar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate 
+                        TargetType="{x:Type ProgressBar}">
+                        <Grid MinHeight="20" MinWidth="240">
+                            <Rectangle
+                              Name="PART_Track" 
+                              Fill="Gainsboro"
+                              Stroke="Gray"
+                              StrokeThickness="1" />
+                            <Rectangle 
+                              Name="PART_Indicator" 
+                              Fill="DarkGray" 
+                              Stroke="Gray" 
+                              StrokeThickness="1" 
+                              HorizontalAlignment="Left" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <ProgressBar x:Name="progress" Value="30" 
+                     HorizontalAlignment="Center"
+                     Margin="10"/>
+        <Slider Value="{Binding ElementName=progress, Path=Value, Mode=TwoWay}"
+                Minimum="0" Maximum="100"  Margin="10"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,50 @@
+﻿<Window 
+    x:Class="Recipe_05_22.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_05_22="clr-namespace:Recipe_05_22"
+    Title="WPF Recipes 5_22" Height="294" Width="160">
+
+    <Window.Resources>
+
+        <!-- Create an instance of the collection class -->
+        <Recipe_05_22:Countries x:Key="countries"/>
+
+        <!-- Create an instance of the GroupByContinentConverter class -->
+        <Recipe_05_22:GroupByContinentConverter 
+            x:Key="GroupByContinentConverter"/>
+
+        <!-- Wrap the collection in a CollectionViewSource -->
+        <!-- Set the Filter property to a FilterEventHandler -->
+        <CollectionViewSource 
+            x:Key="cvs" 
+            Source="{Binding 
+                     Source={StaticResource countries}}">
+
+            <!-- Add a PropertyGroupDescription that uses -->
+            <!-- the GroupByContinentConverter class to create the groups -->
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription 
+                    Converter="{StaticResource GroupByContinentConverter}" />
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+
+    </Window.Resources>
+
+    <Grid>
+        <!-- Bind an ItemsControl to the CollectionViewSource. -->
+        <!-- Set its DisplayMemberPath to display the Name property. -->
+        <!-- Set the GroupStyle to use the Default. -->
+        <ItemsControl 
+            Margin="10"
+             ItemsSource="{Binding Source={StaticResource cvs}}"
+             DisplayMemberPath="Name" >
+
+            <!-- The default GroupStyle indents the items in a group -->
+            <ItemsControl.GroupStyle>
+                <x:Static Member="GroupStyle.Default"/>
+            </ItemsControl.GroupStyle>
+        </ItemsControl>
+
+    </Grid>
+</Window>

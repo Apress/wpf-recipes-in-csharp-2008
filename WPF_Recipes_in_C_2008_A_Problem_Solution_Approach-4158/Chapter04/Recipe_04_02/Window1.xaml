@@ -1,0 +1,12 @@
+﻿<Window x:Class="Recipe_04_02.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_04_02="clr-namespace:Recipe_04_02;assembly="
+    Title="WPF Recipes 4_02" Height="72" Width="300">
+    <Grid>
+        <Recipe_04_02:FileInputControl 
+            Margin="8">
+            c:\readme.txt
+        </Recipe_04_02:FileInputControl>
+    </Grid>
+</Window>

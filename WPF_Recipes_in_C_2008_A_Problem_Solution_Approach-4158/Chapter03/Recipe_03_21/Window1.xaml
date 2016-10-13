@@ -1,0 +1,39 @@
+﻿<Window x:Class="Recipe_03_21.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_21" Height="200" Width="300">
+    <DockPanel LastChildFill="True">
+        <DockPanel.Resources>
+            <Style TargetType="{x:Type TreeViewItem}">
+                <EventSetter Event="Selected" 
+                             Handler="TreeViewItem_Selected" />
+            </Style>
+        </DockPanel.Resources>
+        <Button Click="Button_Click" DockPanel.Dock="Bottom" 
+                Content="Show Selected" MaxHeight="23" MaxWidth="100" />
+        <TreeView FontSize="16" Name="tvTree">
+            <TreeViewItem Header="Birds" IsExpanded="True">
+                <TreeViewItem Header="Flighted">
+                    <TreeViewItem Header="Falcon" />
+                    <TreeViewItem Header="Starling" />
+                </TreeViewItem>
+                <TreeViewItem Header="Flightless" IsExpanded="True">
+                    <TreeViewItem Header="Emu" />
+                    <TreeViewItem Header="Kiwi" />
+                </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Reptiles">
+                <TreeViewItem Header="Lizards">
+                    <TreeViewItem Header="Blue Tonge" />
+                    <TreeViewItem Header="Frilled" />
+                    <TreeViewItem Header="Iguana" />
+                </TreeViewItem>
+                <TreeViewItem Header="Snakes">
+                    <TreeViewItem Header="Anaconda" />
+                    <TreeViewItem Header="Cobra" />
+                    <TreeViewItem Header="Rattlesnake" />
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+    </DockPanel>
+</Window>

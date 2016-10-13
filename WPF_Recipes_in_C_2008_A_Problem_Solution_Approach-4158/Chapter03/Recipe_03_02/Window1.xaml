@@ -1,0 +1,18 @@
+﻿<Window x:Class="Recipe_03_02.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_02" Height="100" Width="300">
+    <Grid>
+        <TextBlock FontFamily="Tahoma, Arial"
+                   FontSize="20"
+                   FontStyle="Italic"
+                   FontWeight="Light"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Right"
+                   TextDecorations="Underline, Strikethrough"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center">
+            The quick brown fox jumped over the lazy brown dog. 
+        </TextBlock>
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="Recipe_04_07.MyUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Button x:Name="btnMode">
+            Set Design Mode Behaviour
+        </Button>
+    </Grid>
+</UserControl>

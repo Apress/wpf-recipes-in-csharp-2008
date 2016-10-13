@@ -1,0 +1,23 @@
+﻿<Window 
+  x:Class="Recipe_07_08.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Window1" 
+  Height="600" 
+  Width="800" 
+  Loaded="Window_Loaded">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="25" />
+    </Grid.RowDefinitions>
+
+    <DocumentViewer x:Name="dvDocumentViewer"  />
+
+    <Button 
+      Grid.Row="1"
+      Content="Save Document" 
+      Click="btnSaveDocument_Click" 
+    />
+  </Grid>
+</Window>

@@ -1,0 +1,13 @@
+﻿<Window x:Class="Recipe_02_19.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipe 2_19" Height="200" Width="300">
+    <StackPanel>
+        <Button Content="Button _A (1st tab)" TabIndex="0" Margin="2" />
+        <Button Content="Button _B (4th tab)" TabIndex="3" Margin="2" />
+        <Button Content="Button _C (2nd tab)" TabIndex="1" Margin="2" />
+        <Button Content="Button _D (5th tab)" TabIndex="4" Margin="2" />
+        <Button Content="Button _E (3rd tab)" TabIndex="2" Margin="2" />
+        <Button Content="Button _F (6th tab)" TabIndex="5" Margin="2" />
+    </StackPanel>
+</Window>

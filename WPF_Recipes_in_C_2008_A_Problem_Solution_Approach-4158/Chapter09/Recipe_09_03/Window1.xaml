@@ -1,0 +1,33 @@
+﻿<Window x:Class="Recipe_09_03.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 9_03" Height="300" Width="400">
+    <UniformGrid Columns="3" HorizontalAlignment="Center" 
+                 VerticalAlignment="Center">
+        <Polyline Margin="10" Stroke="Black" StrokeThickness="5"
+            Points="0,0 100,0 100,100 0,100 0,20 80,20 80,80 
+                  20,80, 20,40 60,40 60,60 40,60" />
+        <Polyline Margin="10" Stroke="Navy" StrokeThickness="8"
+                  StrokeStartLineCap="Triangle" StrokeEndLineCap="Triangle"
+            Points="0,0 100,0 100,100 0,100 0,20 80,20 80,80 
+                  20,80, 20,40 60,40 60,60 40,60" />
+        <Polyline Margin="10" Stroke="Red" StrokeThickness="5"
+                  StrokeDashArray="2" StrokeDashCap="Triangle"
+            Points="0,0 100,0 100,100 0,100 0,20 80,20 80,80 
+                  20,80, 20,40 60,40 60,60 40,60" />
+        <Polyline Margin="10" Stroke="Black" StrokeThickness="5"
+                  StrokeDashArray="5 2 2 2" StrokeDashCap="Round"                  
+            Points="0,0 100,0 100,100 0,100 0,20 80,20 80,80 
+                  20,80, 20,40 60,40 60,60 40,60" />
+        <Polyline Margin="10" Stroke="DarkCyan" StrokeThickness="8"
+                  StrokeLineJoin="Bevel"
+            Points="0,0 100,0 100,100 0,100 0,20 80,20 80,80 
+                  20,80, 20,40 60,40 60,60 40,60" />
+        <Polyline Margin="10" Stroke="Black" StrokeThickness="8"
+                  StrokeEndLineCap="Round" StrokeStartLineCap="Round"
+                  StrokeLineJoin="Round" StrokeDashCap="Round"
+                  StrokeDashArray="10 2" StrokeDashOffset="10"
+            Points="0,0 100,0 100,100 0,100 0,20 80,20 80,80 
+                  20,80, 20,40 60,40 60,60 40,60" />
+    </UniformGrid>
+</Window>

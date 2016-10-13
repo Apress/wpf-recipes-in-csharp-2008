@@ -1,0 +1,15 @@
+﻿<Window x:Class="Recipe_09_02.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 9_02" Height="270" Width="300" Loaded="Window_Loaded">
+    <Canvas>
+        <TextBlock Canvas.Top="40" Canvas.Left="20"
+                   FontSize="14" Text="Static Points Collection" />
+        <Polyline Stroke="Black" StrokeThickness="3" 
+                  Points="10,10 270,10 270,100 10,100 10,25
+                  255,25 255,85 230,40 205,85 180,40 155,85 35,85" />
+        <TextBlock Canvas.Top="150" Canvas.Left="20"
+                   FontSize="14" Text="Programmatic Points Collection" />
+        <Polyline Name="plLine" Stroke="Black" StrokeThickness="3" />
+    </Canvas>
+</Window>

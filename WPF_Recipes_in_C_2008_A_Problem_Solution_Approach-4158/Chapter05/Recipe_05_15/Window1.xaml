@@ -1,0 +1,98 @@
+﻿<Window 
+    x:Class="Recipe_05_15.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_05_15="clr-namespace:Recipe_05_15"
+    Title="WPF Recipes 5_15" Height="100" Width="280">
+
+    <Window.Resources>
+
+        <!-- A TextBox style to replace the default ErrorTemplate. -->
+        <!-- When the validation rule fails, an error icon is      -->
+        <!-- shown next to the TextBox, and the error message is   -->
+        <!-- displayed in the ToolTip.                             -->
+        <Style 
+            x:Key="textBoxInErrorStyle" 
+            TargetType="{x:Type TextBox}" >
+            <Style.Triggers>
+
+                <!-- A Property Trigger that sets the value of the  -->
+                <!-- Tooltip to the error message, when the binding -->
+                <!-- has a validation error.                        -->
+                <Trigger 
+                    Property="Validation.HasError" 
+                    Value="true">
+                    <Setter 
+                        Property="ToolTip"
+                        Value="{Binding 
+                                RelativeSource={x:Static 
+                                                  RelativeSource.Self}, 
+                                Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+
+            <!-- A Property Setter that sets the ErrorTemplate to   -->
+            <!-- display an error icon to the right of the TextBox. -->
+            <Setter 
+                Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel DockPanel.Dock="Right">
+                            <AdornedElementPlaceholder/>
+                            <Image 
+                               Source="Error.png" 
+                               Width="16" 
+                               Height="16"
+                               ToolTip="{Binding 
+                                         Path=AdornedElement.ToolTip, 
+                                         RelativeSource={RelativeSource 
+                                            Mode=FindAncestor,
+                                            AncestorType={x:Type Adorner}}}"/>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+
+        <!-- A Slider control that displays a value from 0 to 100 -->
+        <Slider Name="slider"
+                Margin="4" Interval="1"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                Minimum="0" Maximum="100"/>
+
+        <StackPanel Orientation="Horizontal" >
+            <TextBlock 
+                Width="Auto" Margin="4" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center" 
+                Text="Gets and sets the value of the slider:" />
+            
+            <!-- A TextBox with a two way binding between its Text property -->
+            <!-- and the Slider control's Value property. The -->
+            <!-- textBoxInErrorStyle resource is assigned as its Style property. -->
+            <TextBox 
+                Width="40" Margin="4"
+                Style="{StaticResource textBoxInErrorStyle}"
+                HorizontalAlignment="Center" >
+              <TextBox.Text>
+                    <Binding 
+                        ElementName="slider" 
+                        Path="Value" 
+                        Mode="TwoWay"
+                        UpdateSourceTrigger="PropertyChanged" >
+                        
+                        <!-- Adds a ValidationRule, specifiying -->
+                        <!-- the local PercentageRule class. -->
+                        <Binding.ValidationRules>
+                            <Recipe_05_15:PercentageRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox> 
+        </StackPanel>
+    </StackPanel>
+</Window>

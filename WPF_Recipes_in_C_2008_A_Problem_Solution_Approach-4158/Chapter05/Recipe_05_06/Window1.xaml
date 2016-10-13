@@ -1,0 +1,41 @@
+﻿<Window x:Class="Recipe_05_06.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 5_06" Height="240" Width="200">
+    <Window.Resources>
+        
+        <!-- Use the Source attribute to specify an embedded XML Data File-->
+        <!--<XmlDataProvider x:Key="CountriesXML" 
+                             Source="Countries.xml" 
+                             XPath="Countries"/>-->
+        
+        <!-- Or embed the data directly -->
+        <XmlDataProvider x:Key="CountriesXML">
+            <x:XData>
+                <Countries xmlns="">
+                    <Country Name="Great Britan" Continent="Europe" />
+                    <Country Name="USA" Continent="NorthAmerica" />
+                    <Country Name="Canada" Continent="NorthAmerica" />
+                    <Country Name="France" Continent="Europe" />
+                    <Country Name="Germany" Continent="Europe" />
+                    <Country Name="Italy" Continent="Europe" />
+                    <Country Name="Spain" Continent="Europe" />
+                    <Country Name="Brazil" Continent="SouthAmerica" />
+                    <Country Name="Argentina" Continent="SouthAmerica" />
+                    <Country Name="China" Continent="Asia" />
+                    <Country Name="India" Continent="Asia" />
+                    <Country Name="Japan" Continent="Asia" />
+                    <Country Name="South Africa" Continent="Africa" />
+                    <Country Name="Tunisia" Continent="Africa" />
+                    <Country Name="Egypt" Continent="Africa" />
+                </Countries>
+            </x:XData>
+        </XmlDataProvider>
+    </Window.Resources>
+    <Grid>
+        <ListBox
+            ItemsSource="{Binding Source={StaticResource CountriesXML}, 
+            XPath=/Countries/Country/@Name}"    
+        />
+    </Grid>
+</Window>

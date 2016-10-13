@@ -1,0 +1,63 @@
+﻿<Window x:Class="Recipe_11_11.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Recipe_11_11" Height="300" Width="300">
+  <Window.Triggers>
+    <EventTrigger
+      RoutedEvent="Window.Loaded">
+      <BeginStoryboard>
+        <Storyboard>
+          <DoubleAnimation
+            AutoReverse="True"
+            RepeatBehavior="Forever"
+            Storyboard.TargetName="tt1"
+            Storyboard.TargetProperty="Y"
+            Duration="0:0:1"
+            To="-90" />
+        </Storyboard>
+      </BeginStoryboard>
+
+      <BeginStoryboard>
+        <Storyboard
+          Timeline.DesiredFrameRate="60">
+          <DoubleAnimation
+            AutoReverse="True"
+            RepeatBehavior="Forever"
+            Storyboard.TargetName="tt2"
+            Storyboard.TargetProperty="Y"
+            To="-90"
+            Duration="0:0:1" />
+        </Storyboard>
+      </BeginStoryboard>
+    </EventTrigger>
+  </Window.Triggers>
+  <Grid>
+    <Ellipse
+      Width="75"
+      Height="75"
+      Fill="Firebrick"
+      Stroke="Black"
+      StrokeThickness="1">
+      <Ellipse.RenderTransform>
+        <TranslateTransform
+          x:Name="tt1"
+          X="-75"
+          Y="90" />
+      </Ellipse.RenderTransform>
+    </Ellipse>
+
+    <Ellipse
+      Width="75"
+      Height="75"
+      Fill="Plum"
+      Stroke="Black"
+      StrokeThickness="1">
+      <Ellipse.RenderTransform>
+        <TranslateTransform
+          x:Name="tt2"
+          X="75"
+          Y="90" />
+      </Ellipse.RenderTransform>
+    </Ellipse>
+  </Grid>
+</Window>

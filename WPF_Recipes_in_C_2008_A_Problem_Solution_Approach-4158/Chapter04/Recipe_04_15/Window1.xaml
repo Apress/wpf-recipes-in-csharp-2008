@@ -1,0 +1,33 @@
+﻿<Window x:Class="Recipe_04_15.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_04_15="clr-namespace:Recipe_04_15;assembly="
+    Title="WPF Recipes 4_15" Height="200" Width="300">
+
+    <Recipe_04_15:DragCanvasControl>
+        
+        <Rectangle 
+            Canvas.Top="8" 
+            Canvas.Left="8"
+            Width="32" 
+            Height="32" 
+            Fill="Blue" 
+            />
+        
+        <Ellipse 
+            Canvas.Top="36" 
+            Canvas.Left="48"
+            Width="40" 
+            Height="24" 
+            Fill="Yellow" />
+
+        <Ellipse 
+            Canvas.Top="60" 
+            Canvas.Left="96"
+            Width="32" 
+            Height="32" 
+            Fill="Red" />
+
+    </Recipe_04_15:DragCanvasControl>
+
+</Window>

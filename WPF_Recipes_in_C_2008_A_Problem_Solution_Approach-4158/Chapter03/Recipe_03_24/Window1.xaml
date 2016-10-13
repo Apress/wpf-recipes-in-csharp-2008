@@ -1,0 +1,22 @@
+﻿<Window x:Class="Recipe_03_24.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 3_24" Height="100" Width="300">
+    <StackPanel>
+        <ComboBox Name="comboBox" IsEditable="True" Margin="5" 
+                  SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="ComboBox Item 1" 
+                          Selected="ComboBoxItem_Selected" />
+            <ComboBoxItem Content="ComboBox Item 2" 
+                          Selected="ComboBoxItem_Selected" />
+            <ComboBoxItem Content="ComboBox Item 3" 
+                          Selected="ComboBoxItem_Selected" IsSelected="True"/>
+            <ComboBoxItem Content="ComboBox Item 4" 
+                          Selected="ComboBoxItem_Selected" />
+            <ComboBoxItem Content="ComboBox Item 5" 
+                          Selected="ComboBoxItem_Selected" />
+        </ComboBox>
+        <Button Content="Get Selected" Margin="5" Width="100" 
+                Click="Button_Click" />
+    </StackPanel>
+</Window>

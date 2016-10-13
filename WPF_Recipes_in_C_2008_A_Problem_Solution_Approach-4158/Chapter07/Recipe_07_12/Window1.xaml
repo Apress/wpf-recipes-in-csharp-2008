@@ -1,0 +1,34 @@
+﻿<Window 
+  x:Class="Recipe_07_12.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Window1" 
+  Height="600" 
+  Width="800">
+  <TabControl>
+    <TabItem Header="Fixed Document">
+      <DockPanel>
+        <Button 
+          Height="24" 
+          Margin="5" 
+          DockPanel.Dock="Bottom" 
+          Content="Open..." 
+          Click="btnOpenFixedDoc_Click" 
+        />
+        <DocumentViewer x:Name="dvDocumentViewer" />
+      </DockPanel>      
+    </TabItem>
+    <TabItem Header="Flow Document">
+      <DockPanel>
+        <Button 
+          Height="24" 
+          Margin="5" 
+          DockPanel.Dock="Bottom" 
+          Content="Open..." 
+          Click="btnOpenFlowDoc_Click" 
+        />
+        <FlowDocumentPageViewer x:Name="fdv"/>
+      </DockPanel>
+    </TabItem>
+  </TabControl>
+</Window>

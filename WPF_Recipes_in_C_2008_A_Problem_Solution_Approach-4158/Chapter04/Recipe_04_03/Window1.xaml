@@ -1,0 +1,49 @@
+﻿<Window x:Class="Recipe_04_03.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_04_03="clr-namespace:Recipe_04_03;assembly="
+    Title="WPF Recipes 4_03" Height="120" Width="260">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.75*" />
+        </Grid.RowDefinitions>
+
+        <Recipe_04_03:PageNumberControl
+            x:Name="pageNumberControl"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="4"
+            Current="2"
+            Total="5"
+            />
+
+        <GroupBox Header="Test"
+                  Margin="4"
+                  Grid.Row="1"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch">
+            <StackPanel
+                Orientation="Horizontal">
+                <Button Click="DecreaseCurrent_Click"
+                    Margin="4">
+                    Current--
+                </Button>
+                <Button Click="IncreaseCurrent_Click"
+                    Margin="4">
+                    Current++
+                </Button>
+                <Button Click="DecreaseTotal_Click"
+                    Margin="4">
+                    Total--
+                </Button>
+                <Button Click="IncreaseTotal_Click"
+                    Margin="4">
+                    Total++
+                </Button>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
+</Window>

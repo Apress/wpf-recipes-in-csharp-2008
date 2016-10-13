@@ -1,0 +1,76 @@
+﻿<Window x:Class="Recipe_06_19.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib"
+    xmlns:Recipe_06_19="clr-namespace:Recipe_06_19;assembly="
+    Title="WPF Recipes 6_19" Height="228" Width="300">
+
+    <Window.Resources>
+
+        <!-- Base Style -->
+        <Style x:Key="baseControlStyle" 
+               TargetType="{x:Type Control}">
+            <Setter Property="FontFamily" Value="Tahoma" />
+            <Setter Property="FontSize" Value="11pt"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Foreground" 
+                    Value="{DynamicResource TextForegroundBrush}" />
+            <Setter Property="Background" 
+                    Value="{DynamicResource BackgroundBrush}" />
+        </Style>
+
+        <!-- Button Style -->
+        <Style TargetType="{x:Type Button}" 
+               BasedOn="{StaticResource baseControlStyle}">
+        </Style>
+
+        <!-- CheckBox Style -->
+        <Style TargetType="{x:Type CheckBox}" 
+               BasedOn="{StaticResource baseControlStyle}">
+        </Style>
+
+        <!-- TextBox Style -->
+        <Style TargetType="{x:Type TextBox}" 
+               BasedOn="{StaticResource baseControlStyle}">
+        </Style>
+
+        <!-- ComboBox Style -->
+        <Style TargetType="{x:Type ComboBox}" 
+               BasedOn="{StaticResource baseControlStyle}">
+        </Style>
+
+        <!-- Skins -->
+        <ObjectDataProvider x:Key="Skins" 
+                            MethodName="GetValues" 
+                            ObjectType="{x:Type s:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="Recipe_06_19:Skin" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+    </Window.Resources>
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Choose a skin:" 
+                       VerticalAlignment="Center"
+                       Foreground="{DynamicResource 
+                       TextForegroundBrush}"/>
+                <ComboBox x:Name="SkinsComboBox" 
+                      Height="24" Width="160"
+                      IsSynchronizedWithCurrentItem="True" 
+                      SelectionChanged="SkinsComboBox_SelectionChanged" 
+                      ItemsSource="{Binding Mode=OneWay, 
+                      Source={StaticResource Skins}}"/>
+            </StackPanel>
+
+            <CheckBox>Hello World</CheckBox>
+            <TextBox>Hello World</TextBox>
+            <Button>Hello World</Button>
+            <Button>Hello World</Button>
+            <ComboBox>Hello World</ComboBox>
+
+        </StackPanel>
+    </Grid>
+</Window>

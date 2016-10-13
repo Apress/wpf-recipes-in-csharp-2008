@@ -1,0 +1,12 @@
+﻿<Window x:Class="Recipe_04_04.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_04_04="clr-namespace:Recipe_04_04;assembly="
+    Title="WPF Recipes 4_04" Height="86" Width="240">
+
+    <Grid>
+        <Recipe_04_04:SearchControl 
+            Margin="8" 
+            SearchChanged="SearchControl_SearchChanged"/>
+    </Grid>
+</Window>

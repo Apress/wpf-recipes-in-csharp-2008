@@ -1,0 +1,85 @@
+﻿<Window 
+  x:Class="Recipe_07_05.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Window1" 
+  Height="300" 
+  Width="300"
+  Loaded="Window_Loaded">
+  <StackPanel>
+    <GroupBox 
+      x:Name="gbStage1"
+      Header="Stage 1 - Select a Printer" 
+      BorderBrush="Black" 
+      Margin="5">
+      <Button 
+        Content="Select Printer..." 
+        Margin="5" 
+        Click="btnSelectPrinter_Click" />
+    </GroupBox>
+
+    <GroupBox 
+      x:Name="gbStage2"
+      Header="Stage 2 - Configure Options" 
+      BorderBrush="Black" 
+      Margin="5">
+      <WrapPanel>
+
+        <GroupBox Header="Duplexing" Margin="5,0,2.5,0">
+          <StackPanel>
+            <RadioButton 
+              x:Name="rbDuplexing1"
+              GroupName="duplexing" 
+              Content="One Sided" />
+            <RadioButton 
+              x:Name="rbDuplexing2"
+              GroupName="duplexing" 
+              Content="Two Sided (Long Edge)" />
+            <RadioButton 
+              x:Name="rbDuplexing3"
+              GroupName="duplexing" 
+              Content="Two Sided (Short Edge)" />
+          </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Collation" Margin="2.5,0">
+          <StackPanel>
+            <RadioButton 
+              x:Name="rbCollation1"
+              GroupName="collation" 
+              Content="Collated" />
+            <RadioButton 
+              x:Name="rbCollation2"
+              GroupName="collation" 
+              Content="Uncollated" />
+          </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Duplexing" Margin="2.5,0,5,0">
+          <StackPanel>
+            <RadioButton 
+              x:Name="rbOrientation1"
+              GroupName="orientation" 
+              Content="Landscape" />
+            <RadioButton 
+              x:Name="rbOrientation2"
+              GroupName="orientation" 
+              Content="Portrait" />
+          </StackPanel>
+        </GroupBox>
+      </WrapPanel>
+    </GroupBox>
+
+    <GroupBox 
+      x:Name="gbStage3"
+      Header="Stage 3 - Print" 
+      BorderBrush="Black" 
+      Margin="5">
+      <Button 
+        Content="Print" 
+        Margin="5" 
+        Click="btnPrint_Click" />
+    </GroupBox>
+
+  </StackPanel>
+</Window>

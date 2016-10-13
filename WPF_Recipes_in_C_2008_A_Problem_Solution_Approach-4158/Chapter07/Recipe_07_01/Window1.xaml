@@ -1,0 +1,19 @@
+﻿<Window 
+  x:Class="Recipe_07_01.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Window1" Height="600" Width="800">
+  <DockPanel>
+    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+      <TextBox x:Name="tbxInsertionText" Width="200" Margin="5,0" />
+      <Button 
+        DockPanel.Dock="Bottom" 
+        Content="Insert" 
+        Width="40" 
+        Margin="5,0" 
+        Click="btnInsert_Click" 
+      />
+    </StackPanel>
+    <RichTextBox x:Name="rtbTextContent" />
+  </DockPanel>
+</Window>

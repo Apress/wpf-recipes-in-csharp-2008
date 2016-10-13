@@ -1,0 +1,20 @@
+﻿<Window
+  x:Class="Recipe_07_06.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Window1"
+  Height="100"
+  Width="300">
+  <StackPanel>
+    <Button
+      Margin="10,5"
+      Content="Print FixedDocument"
+      Click="btnPrintFixedDocument_Click"
+    />
+    <Button
+      Margin="10,5"
+      Content="Print FlowDocument"
+      Click="btnPrintFlowDocument_Click"
+    />
+  </StackPanel>
+</Window>

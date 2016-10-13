@@ -1,0 +1,17 @@
+<Countries>
+  <Country Name="Great Britan" Continent="Europe" />
+  <Country Name="USA" Continent="NorthAmerica" />
+  <Country Name="Canada" Continent="NorthAmerica" />
+  <Country Name="France" Continent="Europe" />
+  <Country Name="Germany" Continent="Europe" />
+  <Country Name="Italy" Continent="Europe" />
+  <Country Name="Spain" Continent="Europe" />
+  <Country Name="Brazil" Continent="SouthAmerica" />
+  <Country Name="Argentina" Continent="SouthAmerica" />
+  <Country Name="China" Continent="Asia" />
+  <Country Name="India" Continent="Asia" />
+  <Country Name="Japan" Continent="Asia" />
+  <Country Name="South Africa" Continent="Africa" />
+  <Country Name="Tunisia" Continent="Africa" />
+  <Country Name="Egypt" Continent="Africa" />
+</Countries>

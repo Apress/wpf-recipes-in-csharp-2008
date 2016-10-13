@@ -1,0 +1,59 @@
+﻿<Window
+  x:Class="Recipe_07_15.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:a="clr-namespace:System.Windows.Annotations;assembly=PresentationFramework"
+  Title="Window1"
+  Height="600"
+  Width="800"
+  Closed="Window_Closed">
+  <DockPanel>
+
+    <Grid DockPanel.Dock="Bottom">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.5*" />
+        <ColumnDefinition Width="0.5*" />
+      </Grid.ColumnDefinitions>
+
+      <Button
+        Content="Open XPS..."
+        Click="btnOpenXps_Click"
+      />
+
+      <Button
+        Content="Save Annotations"
+        Click="btnSaveXps_Click"
+        Grid.Column="1"
+      />
+    </Grid>
+
+    <DocumentViewer x:Name="dvViewer">
+      
+      <DocumentViewer.ContextMenu>
+        <ContextMenu>
+          <MenuItem
+            Header="Add Comment"
+            Command="a:AnnotationService.CreateTextStickyNoteCommand"
+          />
+
+          <MenuItem
+            Header="Add Highlight"
+            Command="a:AnnotationService.CreateHighlightCommand"
+          />
+
+          <Separator />
+
+          <MenuItem
+            Command="a:AnnotationService.DeleteStickyNotesCommand"
+            Header="Remove Notes"
+          />
+
+          <MenuItem
+            Command="a:AnnotationService.ClearHighlightsCommand"
+            Header="Remove Highlight"
+          />
+        </ContextMenu>
+      </DocumentViewer.ContextMenu>
+    </DocumentViewer>
+  </DockPanel>
+</Window>

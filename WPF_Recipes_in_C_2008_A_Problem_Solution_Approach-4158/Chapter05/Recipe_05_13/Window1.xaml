@@ -1,0 +1,86 @@
+﻿<Window x:Class="Recipe_05_13.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_05_13="clr-namespace:Recipe_05_13"
+    x:Name="thisWindow" 
+    Title="WPF Recipes 5_13" Height="240" Width="280">
+
+    <Window.Resources>
+
+        <Recipe_05_13:DataItems x:Key="dataItems"/>
+
+        <!-- Declare two converter classes -->
+        <Recipe_05_13:AmountToHeightConverter x:Key="amountToHeightConverter" />
+
+        <!-- Creates a DataTemplate that displays a colored bar -->
+        <!-- for each DataItem. Its height is calculated by a converter.-->
+        <DataTemplate x:Key="dataItemtemplate">
+            <Rectangle 
+                x:Name="rectangle"
+                Margin="4"
+                Width="30"
+                VerticalAlignment="Bottom"
+                Fill="Green"
+                Height="{Binding 
+                         Path=Amount, 
+                         Converter={StaticResource 
+                                             amountToHeightConverter}}"/>
+            
+            <!-- A DataTigger that binds to the IsPositive property  -->
+            <!-- of a DataItem, and changes the color of the bar to -->
+            <!-- red if IsPositive is False. -->
+            <DataTemplate.Triggers>
+                <DataTrigger 
+                        Binding="{Binding 
+                            Path=IsPositive}" 
+                        Value="False">
+                    <Setter 
+                        TargetName="rectangle" 
+                        Property="Fill" 
+                        Value="Red"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid Margin="20">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+
+        <ItemsControl
+            Grid.Column="1"
+            Margin="4,0,0,4"
+            ItemsSource="{Binding Source={StaticResource dataItems}}"
+            ItemTemplate="{StaticResource dataItemtemplate}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+
+        <Line Grid.RowSpan="2"
+              Stroke="Black"
+              StrokeThickness="2"
+              X1="0" Y1="0"
+              X2="0"
+              Y2="{Binding ElementName=thisWindow, Path=ActualHeight}"/>
+
+        <Line Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Stroke="Black"
+              StrokeThickness="2"
+              X1="0" Y1="0"
+              X2="{Binding ElementName=thisWindow, Path=ActualWidth}"
+              Y2="0"/>
+    </Grid>
+</Window>

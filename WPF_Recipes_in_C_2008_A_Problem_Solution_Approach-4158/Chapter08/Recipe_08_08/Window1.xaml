@@ -1,0 +1,22 @@
+﻿<Window x:Class="Recipe_08_08.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 8_08" Width="230" Height="148" >
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5" VerticalAlignment="Center">From:</TextBlock>
+            <TextBox Name="txtFrom" Margin="5" Width="64" Text="1" />
+            <TextBlock Margin="5" VerticalAlignment="Center">To:</TextBlock>
+            <TextBox Name="txtTo" Margin="5" Width="64" Text="1000000"/>
+        </StackPanel>
+        <Button 
+            Click="StartStop_Click"
+            Name="btnStartStop"
+            Margin="5"
+            Height="34">Start</Button>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5">Biggest Prime Found:</TextBlock>
+            <TextBlock Name="txtBiggestPrime" Margin="5" />
+        </StackPanel>
+    </StackPanel>
+</Window>

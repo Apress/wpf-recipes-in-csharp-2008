@@ -1,0 +1,94 @@
+﻿<Window 
+    x:Class="Recipe_05_14.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_05_14="clr-namespace:Recipe_05_14"
+    Title="WPF Recipes 5_14" Height="360" Width="330">
+    <Window.Resources>
+
+        <!-- Create the TaskList data -->
+        <Recipe_05_14:TaskList x:Key="taskList"/>
+
+        <!-- Create the DataTemplateSelector -->
+        <Recipe_05_14:TaskItemDataTemplateSelector x:Key="taskItemDataTemplateSelector"/>
+
+        <!-- Default DataTemplate for tasks -->
+        <DataTemplate
+            x:Key="defaultTaskTemplate">
+            <Border Name="border" 
+                    BorderBrush="LightBlue" 
+                    BorderThickness="1"
+                    Padding="5" 
+                    Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" 
+                               Text="Name:"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" 
+                               Text="{Binding Path=Name}" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" 
+                               Text="Description:"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" 
+                               Text="{Binding Path=Description}"/>
+                 </Grid>
+            </Border>
+        </DataTemplate>
+
+        <!-- DataTemplate for high priority tasks -->
+        <DataTemplate 
+            x:Key="highPriorityTaskTemplate">
+
+            <Border 
+                Name="border" 
+                BorderBrush="Red" 
+                BorderThickness="2"
+                Margin="5">
+                <DockPanel 
+                    Margin="4" 
+                    HorizontalAlignment="Center">
+                    <TextBlock 
+                        FontSize="18" 
+                        Text="{Binding Path=Description}" />
+                    <Image 
+                        Margin="20,4,4,4" 
+                        Height="55" Width="39"
+                        Source="Exclamation.png"/>
+                </DockPanel>
+            </Border>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock
+            Margin="4"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="14" 
+            Text="Task List:"/>
+        
+        <!-- Bind the ListBox to the data -->
+        <!-- and assign the DataTemplateSelector -->
+        <ListBox
+            Margin="10"
+            Grid.Row="1"
+            HorizontalContentAlignment="Stretch" 
+            ItemsSource="{Binding 
+                          Source={StaticResource taskList}}"
+            ItemTemplateSelector="{StaticResource 
+                                    taskItemDataTemplateSelector}"/>
+        
+  </Grid>
+</Window>

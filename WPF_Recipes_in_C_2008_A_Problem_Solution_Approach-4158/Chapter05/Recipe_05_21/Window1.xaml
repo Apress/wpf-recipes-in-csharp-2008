@@ -1,0 +1,57 @@
+﻿<Window x:Class="Recipe_05_21.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:Recipe_05_21="clr-namespace:Recipe_05_21"
+     Title="WPF Recipes 5_21" Height="294" Width="160">
+    <Window.Resources>
+
+        <!-- Create an instance of the collection class -->
+        <Recipe_05_21:Countries x:Key="countries"/>
+
+        <!-- Wrap it in a CollectionViewSource -->
+        <CollectionViewSource 
+            x:Key="cvs" 
+            Source="{Binding 
+                     Source={StaticResource countries}}">
+            
+            <!-- Add a PropertyGroupDescription to group by the Continent -->
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="Continent"/>
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+
+        <!-- DataTemplate to display the group header -->
+        <DataTemplate x:Key="groupingHeaderTemplate">
+            <Border Height="28">
+                <Label VerticalAlignment="Center" Content="{Binding}" 
+                       BorderBrush="#FF8F8D8D" BorderThickness="0,0,0,0.5" 
+                       Foreground="#FF666666">
+                    <Label.Background>
+                        <LinearGradientBrush
+                            EndPoint="0.506,-0.143" StartPoint="0.502,11.643">
+                            <GradientStop Color="#FF000000" Offset="0"/>
+                            <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+            </Border>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid>
+        <!-- Bind an ItemsControl to the CollectionViewSource -->
+        <!-- Set its DisplayMemberPath to display the Name property -->
+        <ItemsControl 
+            ItemsSource="{Binding 
+                         Source={StaticResource cvs}}"
+            DisplayMemberPath="Name">
+       
+            <!-- Create a GroupStyle that uses the DataTemplate -->
+            <ItemsControl.GroupStyle>
+                <GroupStyle HeaderTemplate=
+                            "{StaticResource groupingHeaderTemplate}" />
+            </ItemsControl.GroupStyle>
+        </ItemsControl>
+    </Grid>
+</Window>

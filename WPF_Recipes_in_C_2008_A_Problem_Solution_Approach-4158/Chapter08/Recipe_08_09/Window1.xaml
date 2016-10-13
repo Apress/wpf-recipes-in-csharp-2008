@@ -1,0 +1,38 @@
+﻿<Window x:Class="Recipe_08_09.Window1"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=System"
+   Title="WPF Recipes 8_09" Height="100" Width="200">
+    
+    <Window.Resources>
+        <ComponentModel:BackgroundWorker
+            x:Key="backgroundWorker"
+            WorkerReportsProgress="True"
+            WorkerSupportsCancellation="True"
+            DoWork="BackgroundWorker_DoWork"
+            RunWorkerCompleted="BackgroundWorker_RunWorkerCompleted"
+            ProgressChanged="BackgroundWorker_ProgressChanged"
+            />
+    </Window.Resources>
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ProgressBar 
+            Name="progressBar" Margin="4"/>
+
+        <Button 
+            Name="button" 
+            Grid.Row="1"
+            Click="button_Click"
+            HorizontalAlignment="Center"
+            Margin="4"
+            Width="60">
+            Start
+        </Button>
+    </Grid>
+</Window>

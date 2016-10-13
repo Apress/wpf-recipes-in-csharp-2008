@@ -1,0 +1,19 @@
+﻿<Window x:Class="Recipe_08_16.ChildWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Title="Child Window" Width="228" Height="128" >
+    <StackPanel Orientation="Vertical">
+        <Button 
+            Click="StartStop_Click"
+            Name="btnStartStop"
+            Margin="4"
+            Height="34">Start</Button>
+        <CheckBox x:Name="chkSleep"
+                   Margin="4"
+                   Content="Sleep between numbers"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="4">Biggest Prime Found:</TextBlock>
+            <TextBlock Name="txtBiggestPrime" Margin="4" />
+        </StackPanel>
+    </StackPanel>
+</Window>

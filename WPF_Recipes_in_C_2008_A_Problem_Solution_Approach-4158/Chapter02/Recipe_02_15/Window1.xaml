@@ -1,0 +1,35 @@
+﻿<Window x:Class="Recipe_02_15.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 2_15" Height="200" Width="300">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Edit">
+                <MenuItem Header="Cu_t" 
+                          Command="ApplicationCommands.Cut" />
+                <MenuItem Header="_Copy" 
+                          Command="ApplicationCommands.Copy" />
+                <MenuItem Header="_Paste" 
+                          Command="ApplicationCommands.Paste"/>
+                <Separator/>
+                <MenuItem Click="SelectAll_Click" Header="_Select All" />
+                <MenuItem Click="Clear_Click" Header="_Clear" />
+            </MenuItem>
+            <MenuItem Header="_Format">
+                <MenuItem Click="TextStyle_Click" Header="_Normal" 
+                              Name="miNormal" />
+                <MenuItem Click="TextStyle_Click" FontWeight="Bold" 
+                              Header="_Bold" Name="miBold" />
+                <MenuItem Click="TextStyle_Click" FontStyle="Italic" 
+                              Header="_Italic" Name="miItalic" />
+            </MenuItem>
+        </Menu>
+        <TextBox Name="txtTextBox" TextWrapping="Wrap">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        </TextBox>
+    </DockPanel>
+</Window>

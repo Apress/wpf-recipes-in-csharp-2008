@@ -1,0 +1,33 @@
+﻿<Window x:Class="Recipe_04_11.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Recipe_04_11="clr-namespace:Recipe_04_11;assembly="
+    Title="WPF Recipes 4_11" Height="120" Width="180">
+    <Grid>
+
+        <StackPanel 
+            Orientation="Horizontal"
+            Margin="4">
+
+            <Recipe_04_11:PieChartControl 
+            x:Name="pieChart1" 
+            Width="36" 
+            Height="36"
+            Margin="8"
+           />
+            <Recipe_04_11:PieChartControl 
+            x:Name="pieChart2" 
+            Width="36" 
+            Height="36"
+            Margin="8"
+           />
+            <Recipe_04_11:PieChartControl 
+            x:Name="pieChart3" 
+            Width="36" 
+            Height="36"
+            Margin="8"
+           />
+        </StackPanel>
+
+    </Grid>
+</Window>

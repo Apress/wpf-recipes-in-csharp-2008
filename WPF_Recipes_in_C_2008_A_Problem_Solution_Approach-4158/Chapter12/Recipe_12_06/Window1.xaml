@@ -1,0 +1,48 @@
+﻿<Window x:Class="Recipe_12_06.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 12_06" Height="300" Width="300">
+    <Canvas>
+        <Slider Canvas.Top="10" Canvas.Left="20" Name="sldSlider" 
+                Minimum="0" Maximum="1000" Value="500"
+                Width="250" MouseWheel="Slider_MouseWheel"/>
+        <RichTextBox Canvas.Top="50" Canvas.Left="20"
+            Width="250" Height="100"
+            VerticalScrollBarVisibility="Visible">
+            <FlowDocument>
+                <Paragraph FontSize="12">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
+                    magna aliquam erat volutpat.
+                </Paragraph>
+                <Paragraph FontSize="15">
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+                    ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+                    commodo consequat. Duis autem vel eum iriure.
+                </Paragraph>
+                <Paragraph FontSize="18">A List</Paragraph>
+                <List>
+                    <ListItem>
+                        <Paragraph>
+                            <Bold>Bold List Item</Bold>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            <Italic>Italic List Item</Italic>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>
+                            <Underline>Underlined List Item</Underline>
+                        </Paragraph>
+                    </ListItem>
+                </List>
+            </FlowDocument>
+        </RichTextBox>
+        <Rectangle Canvas.Top="160" Canvas.Left="20" Name="shpRectangle"
+                   Fill="LightBlue" Width="50" Height="50" 
+                   MouseWheel="Rectangle_MouseWheel">
+        </Rectangle>
+    </Canvas>
+</Window>

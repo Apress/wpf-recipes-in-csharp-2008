@@ -1,0 +1,49 @@
+﻿<Window x:Class="Recipe_02_08.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 2_08" Height="200" Width="250">
+    <TabControl>
+        <TabItem Header="Visible ScrollBars">
+            <ScrollViewer HorizontalScrollBarVisibility="Visible" 
+                          VerticalScrollBarVisibility="Visible" >
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Button 1" Margin="2" />
+                        <Button Content="Button 2" Margin="2" />
+                        <Button Content="Button 3" Margin="2" />
+                        <Button Content="Button 4" Margin="2" />
+                        <Button Content="Button 5" Margin="2" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left">
+                        <Button Content="Button A" Margin="2" />
+                        <Button Content="Button B" Margin="2" />
+                        <Button Content="Button C" Margin="2" />
+                        <Button Content="Button D" Margin="2" />
+                        <Button Content="Button E" Margin="2" />
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Header="Hidden ScrollBars">
+            <ScrollViewer HorizontalScrollBarVisibility="Hidden" 
+                          VerticalScrollBarVisibility="Hidden">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Button 1" Margin="2" />
+                        <Button Content="Button 2" Margin="2" />
+                        <Button Content="Button 3" Margin="2" />
+                        <Button Content="Button 4" Margin="2" />
+                        <Button Content="Button 5" Margin="2" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left">
+                        <Button Content="Button A" Margin="2" />
+                        <Button Content="Button B" Margin="2" />
+                        <Button Content="Button C" Margin="2" />
+                        <Button Content="Button D" Margin="2" />
+                        <Button Content="Button E" Margin="2" />
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+    </TabControl>
+</Window>

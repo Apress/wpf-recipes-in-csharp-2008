@@ -1,0 +1,66 @@
+﻿<Window 
+  x:Class="Recipe_10_04.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  
+  Title="Recipe_10_04" Height="300" Width="300" Loaded="Window1_Loaded">
+  <Window.Resources>
+    <MeshGeometry3D
+      x:Key="triangleMesh"
+      Positions="-1,-1,0 1,-1,-2 1,1,0" 
+      TriangleIndices="0 1 2" />
+  </Window.Resources>
+  <UniformGrid>
+    <!-- Ambient light -->
+    <Viewport3D x:Name="vp1">
+      <Viewport3D.Camera>
+        <PerspectiveCamera LookDirection="0,0,-1" Position="0,0,5" />
+      </Viewport3D.Camera>
+      <ModelVisual3D>
+        <ModelVisual3D.Content>
+          <AmbientLight Color="White" />
+        </ModelVisual3D.Content>
+      </ModelVisual3D>
+    </Viewport3D>
+    <!-- Point light -->
+    <Viewport3D x:Name="vp2">
+      <Viewport3D.Camera>
+        <PerspectiveCamera LookDirection="0,0,-1" Position="0,0,5" />
+      </Viewport3D.Camera>
+      <ModelVisual3D>
+        <ModelVisual3D.Content>
+          <PointLight Position="0,-1,1" Color="White" />
+        </ModelVisual3D.Content>
+      </ModelVisual3D>
+    </Viewport3D>
+    <!-- Directional light -->
+    <Viewport3D x:Name="vp3">
+      <Viewport3D.Camera>
+        <PerspectiveCamera LookDirection="0,0,-1" Position="0,0,5" />
+      </Viewport3D.Camera>
+      <ModelVisual3D>
+        <ModelVisual3D.Content>
+          <DirectionalLight Direction="-1,-1,-1" Color="White" />
+        </ModelVisual3D.Content>
+      </ModelVisual3D>
+    </Viewport3D>
+    <!-- Spot light -->
+    <Viewport3D x:Name="vp4">
+      <Viewport3D.Camera>
+        <PerspectiveCamera LookDirection="0,0,-1" Position="0,0,5" />
+      </Viewport3D.Camera>
+      <ModelVisual3D>
+        <ModelVisual3D.Content>
+          <SpotLight 
+            Range="10"
+            Direction="0,0,-1" 
+            OuterConeAngle="25" 
+            InnerConeAngle="20" 
+            Position="0,0,9" 
+            LinearAttenuation="0.1"
+            Color="White" />
+        </ModelVisual3D.Content>
+      </ModelVisual3D>
+    </Viewport3D>
+  </UniformGrid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="Recipe_12_01.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 12_01" Height="120" Width="300">
+    <Canvas>
+        <Canvas.Resources>
+            <!-- Style all buttons the same -->
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Height" Value="25" />
+                <Setter Property="MinWidth" Value="70" />
+                <EventSetter Event="Click" Handler="Button_Click" />
+            </Style>
+        </Canvas.Resources>
+        <Button Canvas.Top="15" Canvas.Left="30"
+            Content="Asterisk" Name="btnAsterisk" />
+        <Button Canvas.Top="15" Canvas.Left="110"
+            Content="Beep" Name="btnBeep" />
+        <Button Canvas.Top="15" Canvas.Left="190"
+            Content="Exclamation" Name="btnExclamation" />
+        <Button Canvas.Top="50" Canvas.Left="70"
+            Content="Hand" Name="btnHand" />
+        <Button Canvas.Top="50" Canvas.Left="150"
+            Content="Question" Name="btnQuestion" />
+    </Canvas>
+</Window>

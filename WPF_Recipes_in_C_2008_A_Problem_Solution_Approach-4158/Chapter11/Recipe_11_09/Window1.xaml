@@ -1,0 +1,89 @@
+﻿<Window
+  x:Class="Recipe_11_09.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Recipe_11_09"
+  Height="600"
+  Width="600">
+  <UniformGrid>
+    <Ellipse
+      Height="200"
+      Width="200"
+      Fill="Firebrick">
+      <Ellipse.Triggers>
+        <EventTrigger
+          RoutedEvent="Ellipse.Loaded">
+          <BeginStoryboard>
+            <Storyboard
+              AutoReverse="True"
+              RepeatBehavior="Forever">
+              <ColorAnimation
+                Storyboard.TargetProperty="Fill.Color"
+                To="White" />
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </Ellipse.Triggers>
+    </Ellipse>
+
+    <Ellipse
+      Height="200"
+      Width="200"
+      Fill="Firebrick">
+      <Ellipse.Triggers>
+        <EventTrigger
+          RoutedEvent="Ellipse.Loaded">
+          <BeginStoryboard>
+            <Storyboard
+              Duration="0:0:1"
+              RepeatBehavior="0:0:4">
+              <ColorAnimation
+                Storyboard.TargetProperty="Fill.Color"
+                To="White" />
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </Ellipse.Triggers>
+    </Ellipse>
+
+    <Ellipse
+      Height="200"
+      Width="200"
+      Fill="Firebrick">
+      <Ellipse.Triggers>
+        <EventTrigger
+          RoutedEvent="Ellipse.Loaded">
+          <BeginStoryboard>
+            <Storyboard
+              RepeatBehavior="5x">
+              <ColorAnimation
+                Storyboard.TargetProperty="Fill.Color"
+                To="White" />
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </Ellipse.Triggers>
+    </Ellipse>
+
+    <Ellipse
+      Height="200"
+      Width="200"
+      Fill="Firebrick">
+      <Ellipse.Triggers>
+        <EventTrigger
+          RoutedEvent="Ellipse.Loaded">
+          <BeginStoryboard>
+            <Storyboard
+              AutoReverse="True"
+              RepeatBehavior="0:0:2">
+              <ColorAnimation
+                Storyboard.TargetProperty="Fill.Color"
+                To="White" />
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </Ellipse.Triggers>
+    </Ellipse>
+  </UniformGrid>
+</Window>
+

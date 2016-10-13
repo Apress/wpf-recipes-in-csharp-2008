@@ -1,0 +1,56 @@
+﻿<Window
+  x:Class="Recipe_11_07.Window1"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="Recipe_11_07"
+  Height="300"
+  Width="600">
+  <Grid>
+    <Rectangle
+      x:Name="Rectangle"
+      Height="100"
+      Width="100"
+      Fill="Firebrick">
+      <Rectangle.RenderTransform>
+        <MatrixTransform x:Name="RectangleMatrixTransform" />
+      </Rectangle.RenderTransform>
+      
+      <Rectangle.Triggers>
+        <EventTrigger RoutedEvent="Rectangle.Loaded">
+          <BeginStoryboard x:Name="RectangleStoryboard">
+            <Storyboard 
+              x:Name="Storyboard"
+              CurrentTimeInvalidated="Storyboard_Changed">
+              
+              <MatrixAnimationUsingPath
+                Storyboard.TargetName="RectangleMatrixTransform"
+                Storyboard.TargetProperty="Matrix"
+                Duration="0:0:10"
+                RepeatBehavior="Forever">
+                <MatrixAnimationUsingPath.PathGeometry>
+                  <PathGeometry Figures="M -100,0 300, 0" />
+                </MatrixAnimationUsingPath.PathGeometry>
+              </MatrixAnimationUsingPath>
+            </Storyboard>
+          </BeginStoryboard>
+        </EventTrigger>
+      </Rectangle.Triggers>
+    </Rectangle>
+
+    <Slider
+      x:Name="Seeker"
+      Minimum="0"
+      Maximum="1"
+      SmallChange="0.001"
+      ValueChanged="Seeker_ValueChanged">
+      <Slider.Triggers>
+        <EventTrigger RoutedEvent="Slider.MouseLeftButtonDown">
+          <StopStoryboard BeginStoryboardName="RectangleStoryboard" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Slider.MouseLeftButtonUp">
+          <ResumeStoryboard BeginStoryboardName="RectangleStoryboard" />
+        </EventTrigger>
+      </Slider.Triggers>
+    </Slider>
+  </Grid>
+</Window>

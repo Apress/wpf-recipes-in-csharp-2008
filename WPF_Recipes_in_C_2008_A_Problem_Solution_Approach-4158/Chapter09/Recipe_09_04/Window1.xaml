@@ -1,0 +1,31 @@
+﻿<Window x:Class="Recipe_09_04.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 9_04" Height="300" Width="290">
+    <Canvas Margin="10">
+        <Path Stroke="Black" StrokeThickness="5" StrokeLineJoin="Round"
+              StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure IsClosed="False" StartPoint="10,100">
+                        <LineSegment Point="150,100" />
+                        <ArcSegment Point="250,50" IsLargeArc="False" 
+                                    Size="100,80" SweepDirection="Clockwise"/>
+                        <ArcSegment Point="50,150" IsLargeArc="False" 
+                                    Size="100,80" />
+                        <BezierSegment Point1="200,300" Point2="200,-80" 
+                                       Point3="250,230"/>
+                    </PathFigure>
+                    <PathFigure IsClosed="False" StartPoint="10,150">
+                        <LineSegment Point="30,230" />
+                        <ArcSegment Point="110,230" 
+                                    IsLargeArc="False" Size="100,100" />
+                        <ArcSegment Point="240,240"
+                                    IsLargeArc="False" Size="100,100" 
+                                    SweepDirection="Clockwise"/>
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+    </Canvas>
+</Window>

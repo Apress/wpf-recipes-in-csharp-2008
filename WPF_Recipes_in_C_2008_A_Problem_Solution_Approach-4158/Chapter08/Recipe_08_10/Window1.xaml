@@ -1,0 +1,23 @@
+﻿<Window x:Class="Recipe_08_10.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 8_10" Height="100" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <Button 
+            x:Name="button"
+            Click="Button_Click">Start Timer</Button>
+        
+        <TextBlock 
+            x:Name="txtStatus"
+            Grid.Column="1"
+            Margin="4"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+        </TextBlock>
+    </Grid>
+</Window>

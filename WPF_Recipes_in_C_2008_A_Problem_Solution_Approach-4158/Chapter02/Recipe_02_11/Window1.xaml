@@ -1,0 +1,32 @@
+﻿<Window x:Class="Recipe_02_11.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WPF Recipes 2_11" Height="200" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="0" Header="Simple Text" Margin="5">
+            <StackPanel>
+                <RadioButton Content="Radio 1" IsChecked="True" Margin="5" />
+                <RadioButton Content="Radio 2" Margin="5" />
+                <RadioButton Content="Radio 3" Margin="5" />
+                <RadioButton Content="Radio 4" Margin="5" />
+                <RadioButton Content="Radio 5" Margin="5" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Margin="5">
+            <GroupBox.Header>
+                <Image Source="Apress.gif" />
+            </GroupBox.Header>
+            <StackPanel>
+                <RadioButton Content="Radio A" IsChecked="True" Margin="5" />
+                <RadioButton Content="Radio B" Margin="5" />
+                <RadioButton Content="Radio C" Margin="5" />
+                <RadioButton Content="Radio D" Margin="5" />
+                <RadioButton Content="Radio E" Margin="5" />
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

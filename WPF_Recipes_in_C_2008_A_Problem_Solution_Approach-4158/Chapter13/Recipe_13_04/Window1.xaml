@@ -1,0 +1,59 @@
+﻿<Window x:Class="Recipe_13_04.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    xmlns:rec="clr-namespace:Recipe_13_04"
+    Title="WPF Recipes 13_04" Height="300" Width="500">
+    <UniformGrid Columns="2" Rows="2" x:Name="Grid1">
+        <UniformGrid.Resources>
+            <RadialGradientBrush x:Key="RedBrush" RadiusX=".8" RadiusY="1" 
+                                 Center="0.5,0.5" GradientOrigin="0.05,0.5">
+                <GradientStop Color="#ffffff" Offset="0.1" />
+                <GradientStop Color="#ff0000" Offset="0.5" />
+                <GradientStop Color="#880000" Offset="0.8" />
+            </RadialGradientBrush>
+            <RadialGradientBrush x:Key="BlueBrush" RadiusX=".8" RadiusY="1" 
+                                 Center="0.5,0.5" GradientOrigin="0.05,0.5">
+                <GradientStop Color="#ffffff" Offset="0.1" />
+                <GradientStop Color="#0000ff" Offset="0.5" />
+                <GradientStop Color="#000088" Offset="0.8" />
+            </RadialGradientBrush>
+            <rec:CountryCollection x:Key="Countries">
+                <rec:Country ID="1" Name="Australia" Capital="Sydney" />
+                <rec:Country ID="2" Name="United Kingdom" Capital="London" />
+                <rec:Country ID="3" Name="India" Capital="New Delhi" />
+                <rec:Country ID="4" Name="Russia" Capital="Moscow" />
+                <rec:Country ID="5" Name="Japan" Capital="Tokyo" />
+            </rec:CountryCollection>
+        </UniformGrid.Resources>
+        <!-- A Winforms Button control-->
+        <WindowsFormsHost >  
+            <wf:Button x:Name="btnWinFormButton" Text="Make Blue" 
+                       MaximumSize="100,25" BackColor="LightGray"
+                       Click="btnWinFormButton_Click"/>
+        </WindowsFormsHost>
+        <!-- A WPF Ellipse-->
+        <Ellipse Margin="5" Name="Ellipse1" ToolTip="A WPF Ellipse."
+                 Fill="{StaticResource RedBrush}">
+        </Ellipse>
+        <!-- A WPF RichTextBox control-->
+        <RichTextBox DockPanel.Dock="Bottom" ToolTip="A WPF Ellipse."
+                     VerticalScrollBarVisibility="Visible">
+            <FlowDocument>
+                <Paragraph FontSize="15">
+                    A WPF RichTextBox.
+                </Paragraph>
+                <Paragraph FontSize="12">
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+                    ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+                    commodo consequat. Duis autem vel eum iriure.
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <!-- A Winforms DataGridView control-->
+        <WindowsFormsHost HorizontalAlignment="Center">
+            <wf:DataGridView x:Name="dataGrid" 
+                             DataSource="{StaticResource Countries}"/>
+        </WindowsFormsHost>
+    </UniformGrid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window 
+    x:Class="Recipe_05_20.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Recipe_05_20"
+    Title="WPF Recipes 5_20" Height="124" Width="124">
+    <Window.Resources>
+
+        <!-- Create an instance of the collection class -->
+        <local:Countries x:Key="countries"/>
+
+        <!-- Wrap it in a CollectionViewSource -->
+        <!-- Set the Filter property to a FilterEventHandler -->
+        <CollectionViewSource 
+            x:Key="cvs" 
+            Source="{Binding 
+                     Source={StaticResource countries}}"
+            Filter="CollectionViewSource_EuropeFilter" />
+
+    </Window.Resources>
+
+    <Grid>
+        <!-- Bind an ItemsControl to the CollectionViewSource -->
+        <!-- Set its DisplayMemberPath to display the Name property -->
+        <ItemsControl 
+            ItemsSource="{Binding 
+                          Source={StaticResource cvs}}"
+            DisplayMemberPath="Name"/>
+    </Grid>
+
+</Window>
